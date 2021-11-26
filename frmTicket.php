@@ -543,9 +543,7 @@
 
     window.onload = function() {
         const useNodeJS = false;   // if you are not using a node server, set this value to false
-        //const defaultLiffId = "1656445468-pPVkELw7";   // change the default LIFF value if you are not using a node server
-	const defaultLiffId = "1656503744-kojgw9pb";
-
+        const defaultLiffId = "1656503744-kojgw9pb";
         let myLiffId = "";
        
         if (useNodeJS) {
@@ -619,9 +617,12 @@
         var sCmd = sLineDisplay+"^c"+sUserName+"^c"+sTel+"^c"+sEMail;
 
         var para = "?LinkCode=REGISTER&LineId="+sLineId+"&CmdCommand="+sCmd;
-        //var url = "https://rmxregister.herokuapp.com/frmRegister.php" + para;
-	var url = "https://rmxliff.ddns.net/frmRegister.php" + para;          
-  
+
+        var url = "https://rmxlineliff.herokuapp.com/";
+            url = url + "frmRegister.php" + para;
+
+        
+            
         liff.login({ redirectUri: url });
 
         //alert(url);

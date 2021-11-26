@@ -80,6 +80,23 @@ if ($LinkCode == 'QUERY') {
     }
 }
 
+function ticketSearchScreen()
+{
+    echo
+    '<div class="login_container">
+        <div class="login_container">
+            <label for="txtFirst"><b>Start Date</b></label>
+            <input type="date" dateformat="d M y" id="txtFirst">
+            <label for="txtLast"><b>End Date</b></label>
+            <input type="date" id="txtLast" dateformat="d M y">
+            <label for="txtTicketNo"><b>Ticket No</b></label>
+            <input type="text" id="txtTicketNo" value="">
+            <input type="hidden" id="txtRet" value="<?php echo $RetCommand; ?>">
+            <button type="button" id="btnSearch" onclick="SearchClick()">Serach</button>
+        </div>
+    </div>';
+}
+
 
 
 ?>
@@ -307,37 +324,13 @@ if ($LinkCode == 'QUERY') {
 
     <form class="animate" method="GET" enctype="multipart/form-data">
 
-        <?php if ($sFlag == '0' || $sFlag == '') {
+        <?php
+        if ($sFlag == '0' || $sFlag == '') {
             echo registerScreen();
-        } else { ?>
-            <div class="login_container">
-
-                <div class="login_container">
-
-                    <label for="txtFirst"><b>Start Date</b></label>
-                    <input type="date" dateformat="d M y" id="txtFirst">
-
-                    <label for="txtLast"><b>End Date</b></label>
-                    <input type="date" id="txtLast" dateformat="d M y">
-
-                    <label for="txtTicketNo"><b>Ticket No</b></label>
-                    <input type="text" id="txtTicketNo" value="">
-
-
-
-                    <input type="hidden" id="txtRet" value="<?php echo $RetCommand; ?>">
-
-                    <button type="button" id="btnSearch" onclick="SearchClick()">Serach</button>
-
-                </div>
-
-
-            </div>
-
-
-
-        <?php }  ?>
-
+        } else {
+            ticketSearchScreen();
+        }
+        ?>
 
         <input type="hidden" id="txtFlag" value="<?php echo $sFlag; ?>">
         <input type="hidden" id="txtCompanyCode" value="<?php echo $CompanyCode; ?>">
@@ -345,8 +338,7 @@ if ($LinkCode == 'QUERY') {
         <input type="hidden" id="txtMsg" value="<?php echo $sFlagMsg; ?>">
         <input type="hidden" id="txtShowMsg" value="<?php echo $sShowMsg; ?>">
         <input type="hidden" id="txtRetCommand" value="<?php echo $RetCommand; ?>">
-	<!--input type="hidden" id="txtLineId" value="<?php echo $LiffId; ?>"-->
-        <input type="hidden" id="txtLineId" value="<?php echo $LineId; ?>">
+        <input type="hidden" id="txtLineId" value="<?php echo $LiffId; ?>">
         <input type="hidden" id="txtTableTitle" value="<?php echo $TableTitle; ?>">
         <input type="hidden" id="txtsURL" value="<?php echo $sURL; ?>">
 
@@ -425,49 +417,36 @@ if ($LinkCode == 'QUERY') {
 
         function initializeApp() {
 
+            if (liff.isLoggedIn()) {
 
-            var sFlag = document.getElementById('txtFlag').value;
-            if (sFlag == "5") {
-                var sRetCommand = document.getElementById('txtRetCommand').value;
-                if (sRetCommand.length > 0) {
+                // liff.getProfile().then(profile => {
+                //         const userId = profile.userId;
+                //         if (document.getElementById('txtLineId'))
+                //             document.getElementById('txtLineId').value = userId;
 
-                    fillTableData('tblList', sRetCommand);
-                    modal.style.display = "block";
+                //         if (document.getElementById('txtShowMsg')) {
+                //             var sShow = document.getElementById('txtShowMsg').value;
+                //             if (sShow == "1") {
+                //                 var sMsg = document.getElementById('txtMsg').value;
+                //                 if (sMsg.length > 0) alert(sMsg);
+                //             }
+                //         }
+                //         // alert(userId);
+                //     })
+                //     .catch((err) => {
+                //         alert(err);
+                //         console.log('error', err);
+                //     });
+
+                var sFlag = document.getElementById('txtFlag').value;
+                if (sFlag == "5") {
+                    var sRetCommand = document.getElementById('txtRetCommand').value;
+                    if (sRetCommand.length > 0) {
+                        fillTableData('tblList', sRetCommand);
+                        modal.style.display = "block";
+                    }
                 }
             }
-
-
-            // if (liff.isLoggedIn()) {
-
-            //     liff.getProfile().then(profile => {
-            //             const userId = profile.userId;
-            //             if (document.getElementById('txtLineId'))
-            //                 document.getElementById('txtLineId').value = userId;
-
-            //             if (document.getElementById('txtShowMsg')) {
-            //                 var sShow = document.getElementById('txtShowMsg').value;
-            //                 if (sShow == "1") {
-            //                     var sMsg = document.getElementById('txtMsg').value;
-            //                     if (sMsg.length > 0) alert(sMsg);
-            //                 }
-            //             }
-            //             // alert(userId);
-            //         })
-            //         .catch((err) => {
-            //             alert(err);
-            //             console.log('error', err);
-            //         });
-
-            //     var sFlag = document.getElementById('txtFlag').value;
-            //     if (sFlag == "5") {
-            //         var sRetCommand = document.getElementById('txtRetCommand').value;
-            //         if (sRetCommand.length > 0) {
-
-            //             fillTableData('tblList', sRetCommand);
-            //             modal.style.display = "block";
-            //         }
-            //     }
-            // }
 
 
         }
@@ -500,7 +479,7 @@ if ($LinkCode == 'QUERY') {
 
             var URL = document.getElementById('txtsURL').value;
             url = URL + "frmQuery.php" + para;
-	    //alert(url);
+            // alert(url);
             window.location.assign(url);
 
 
