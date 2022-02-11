@@ -11,14 +11,6 @@ include_once("menu/zMenuFunction.php");
 include_once("rmxLineFunction.php");
 include_once("rmxWebhookFunction.php");
 
-// header('Access-Control-Allow-Origin: *');
-
-$GLOBALS['COMPANY_URL'] =  COMPANY_URL;
-$GLOBALS['REGISTER_URL'] =   REGISTER_URL;
-$GLOBALS['COMPANY_CODE'] =   COMPANY_CODE;
-$GLOBALS['LIFF_ID'] =   LIFF_ID;
-$GLOBALS['sURL'] =   sURL;
-
 $Function = '';
 if (isset($_POST['Function']))
     $Function = $_POST['Function'];
@@ -60,7 +52,7 @@ $Function != '' ?? $Function = $menu;
 </head>
 
 <body class="rmxbody">
-    <!-- <div class="loader"></div> -->
+    <div class="loader"></div>
     <div class="container">
         <div class="row">
             <div id="rmxLiFFLayout"></div>
