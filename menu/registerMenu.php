@@ -3,6 +3,8 @@
 error_reporting(-1);
 ini_set('display_errors', 'On');
 
+include($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
+
 $GLOBALS['COMPANY_URL'] =  COMPANY_URL;
 $GLOBALS['REGISTER_URL'] =   REGISTER_URL;
 $GLOBALS['COMPANY_CODE'] =   COMPANY_CODE;
