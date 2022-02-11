@@ -6,6 +6,7 @@ ini_set('display_errors', 'On');
 include_once("zApiFunction.php");
 include_once("zMenuFunction.php");
 include_once($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
+include_once($_SERVER['DOCUMENT_ROOT'] . "/rmxWebhookFunction.php");
 
 
 $GLOBALS['COMPANY_URL'] =  COMPANY_URL;
