@@ -124,7 +124,7 @@ function replyJsonMessage($jsonData, $LineId)
     $textTypeParams = $jsonData["events"][0]["message"]["type"];
     if ($textTypeParams == 'text') {
         $textParams = $jsonData["events"][0]["message"]["text"];
-        $case = strtolower($textParams);
+        $case = trim(strtolower($textParams));
         if ($case  == 'status') {
             $flexMessage = ticketDetailFlexMessage($LineId);
         } else if ($case  == 'logout') {
