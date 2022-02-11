@@ -2,17 +2,18 @@
 
 include_once("define_Global.php");
 
+$GLOBALS['RICHMENU_ID'] =  RICHMENU_ID;
 $GLOBALS['BEARER_TOKEN'] =  BEARER_TOKEN;
 
-//Line Api
+
 function rmxChangeMemberRichMenu($type, $LINEID)
 {
     if ($type == 'LOGOUT') {
         $url = "https://api.line.me/v2/bot/user/$LINEID/richmenu";
         $method = 'DELETE';
-    } else if ($type == 'REGISTER') {
+    } else if ($type == 'MEMBER') {
         $CURLOPT = CURLOPT_POST;
-        $RICHMENUID = RICHMENU_ID;
+        $RICHMENUID = $GLOBALS['RICHMENU_ID'];
         $url = "https://api.line.me/v2/bot/user/$LINEID/richmenu/$RICHMENUID";
         $method = "POST";
     }

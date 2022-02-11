@@ -80,7 +80,7 @@ if ($status == 'check') {
 
 if ($sFlag == '4') {
     $LINEID = $getDataFromUrl->LineId;
-    rmxChangeMemberRichMenu('Member', $LINEID);
+    rmxChangeMemberRichMenu('MEMBER', $LINEID);
 }
 
 
@@ -132,7 +132,7 @@ if ($sFlag == '4') {
         }
 
         var sFlag = "<?php echo $sFlag; ?>";
-        if (sFlag == 4) {
+        if (sFlag == '4') {
             rmxCloseWindow();
         }
     </script>
