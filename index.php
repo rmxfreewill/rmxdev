@@ -8,8 +8,8 @@ ini_set('display_errors', 'On');
 include("define_Global.php");
 include("menu/zApiFunction.php");
 include("menu/zMenuFunction.php");
-
-include_once("rmxLineFunction.php");
+include("rmxLineFunction.php");
+include("rmxWebhookFunction.php");
 
 // header('Access-Control-Allow-Origin: *');
 
@@ -60,7 +60,7 @@ $Function != '' ?? $Function = $menu;
 </head>
 
 <body class="rmxbody">
-    <!-- <div class="loader"></div> -->
+    <div class="loader"></div>
     <div class="container">
         <div class="row">
             <div id="rmxLiFFLayout"></div>
@@ -78,7 +78,6 @@ $Function != '' ?? $Function = $menu;
                                 const userIdProfile = profile.userId;
                                 const sCompCode = "<? echo COMPANY_CODE; ?>";
                                 const sUrl = "<? echo sURL; ?>";
-                                $('#rmxLiFFLayout').text(userIdProfile);
                                 var getParam = rmxGetParams();
                                 var toMenu = getParam.menu;
                                 var toCmd = getParam.CmdCommand;
@@ -119,7 +118,7 @@ $Function != '' ?? $Function = $menu;
                                 } else if (toStatus == 'init' || toStatus == 'check') {
                                     //  alert('menuUrl: ' + menuUrl);
                                     try {
-                                        // $("#rmxLiFFLayout").load(menuUrl);
+                                        $("#rmxLiFFLayout").load(menuUrl);
                                     } catch (err) {
                                         console.log('err rmxLiFFLayout: ' + error);
                                     }

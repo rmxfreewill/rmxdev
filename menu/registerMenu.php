@@ -3,9 +3,6 @@
 error_reporting(-1);
 ini_set('display_errors', 'On');
 
-include("zMenuFunction.php");
-include("zApiFunction.php");
-
 $GLOBALS['COMPANY_URL'] =  COMPANY_URL;
 $GLOBALS['REGISTER_URL'] =   REGISTER_URL;
 $GLOBALS['COMPANY_CODE'] =   COMPANY_CODE;
