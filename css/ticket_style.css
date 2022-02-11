@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box
+}
+
+/* Set height of body and the document to 100% */
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+}
+
+div.scrollmenu {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+    height: 40px;
+
+}
+
+div.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+    background-color: #777;
+}
+
+/* Style tab links */
+.tablink {
+    margin: 0;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 10px 20px;
+    height: 100%;
+}
+
+
+table.tblticket {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 12px;
+}
+
+table.tblticket td,
+table.tblticket th {
+
+    border: 1px solid black;
+    padding: 8px;
+}
+
+
+table.tblticket th {
+    /*padding-top: 12px;*
+/*padding-bottom: 12px;*/
+    text-align: right;
+    /*background-color: #04AA6D;*/
+    color: blue;
+}
+
+table.tblticket td {
+    /*padding-top: 12px;*
+/*padding-bottom: 12px;*/
+    text-align: left;
+    /*background-color: #04AA6D;*/
+    color: black;
+}

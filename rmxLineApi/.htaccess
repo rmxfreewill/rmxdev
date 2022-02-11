@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^ v1/ [QSA,L]
+RewriteRule ^ routeApi.php [QSA,L]
