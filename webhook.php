@@ -179,7 +179,8 @@ function inputWebhook($LINEData)
         $MessageType = $jsonData["events"][0]["message"]["type"];
         $MessageText = $jsonData["events"][0]["message"]["text"];
         $replyJson["replyToken"] = $replyToken;
-        $replyJson["to"] = getLineIdAll($replyUserId, 'lineid');
+        // $replyJson["to"] = getLineIdAll($replyUserId, 'lineid');
+        $replyJson["to"] = [$replyUserId];
         $replyJson["messages"][0] = replyJsonMessage($jsonData, $replyUserId);
         $encodeJson = json_encode($replyJson);
         $results = sendMessage($encodeJson);
