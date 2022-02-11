@@ -1,5 +1,9 @@
 <?php
 
+include_once("define_Global.php");
+
+$GLOBALS['BEARER_TOKEN'] =  BEARER_TOKEN;
+
 //Line Api
 function rmxChangeMemberRichMenu($type, $LINEID)
 {
@@ -14,7 +18,7 @@ function rmxChangeMemberRichMenu($type, $LINEID)
     }
     $data = array();
     $headers = [
-        "Authorization: Bearer " . BEARER_TOKEN
+        "Authorization: Bearer " . $GLOBALS['BEARER_TOKEN']
     ];
     try {
 
@@ -46,7 +50,7 @@ function sendMessage($replyJson)
     $url = "https://api.line.me/v2/bot/message/multicast";
 
     $sendInfo['URL'] = $url;
-    $sendInfo['AccessToken'] = "6DOzScAqBRwD/oRPwvMFua/SBvgLtXciCay4cwK10oTPA88R60mjeGdeW8NDL61dCJX2EtyHINFcj1DvY0mboZntH38a/fhTRI3rCaN4vDI/zWBCl0ze5K/AV2JoxoCwR9OZXj2Y7rHn6nABPwZMVwdB04t89/1O/w1cDnyilFU=";
+    $sendInfo['AccessToken'] = $GLOBALS['BEARER_TOKEN'];
 
     try {
         $ch = curl_init();
