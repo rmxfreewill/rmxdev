@@ -78,7 +78,7 @@ $Function != '' ?? $Function = $menu;
                                 const userIdProfile = profile.userId;
                                 const sCompCode = "<? echo COMPANY_CODE; ?>";
                                 const sUrl = "<? echo sURL; ?>";
-                                $('rmxLiFFLayout').text(userIdProfile);
+                                $('#rmxLiFFLayout').text(userIdProfile);
                                 var getParam = rmxGetParams();
                                 var toMenu = getParam.menu;
                                 var toCmd = getParam.CmdCommand;
