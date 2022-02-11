@@ -5,11 +5,11 @@ session_start();
 error_reporting(-1);
 ini_set('display_errors', 'On');
 
-include("define_Global.php");
-include("menu/zApiFunction.php");
-include("menu/zMenuFunction.php");
-include("rmxLineFunction.php");
-include("rmxWebhookFunction.php");
+include_once("define_Global.php");
+include_once("menu/zApiFunction.php");
+include_once("menu/zMenuFunction.php");
+include_once("rmxLineFunction.php");
+include_once("rmxWebhookFunction.php");
 
 // header('Access-Control-Allow-Origin: *');
 
