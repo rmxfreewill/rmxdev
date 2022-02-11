@@ -78,7 +78,7 @@ $Function != '' ?? $Function = $menu;
                                 const userIdProfile = profile.userId;
                                 const sCompCode = "<? echo COMPANY_CODE; ?>";
                                 const sUrl = "<? echo sURL; ?>";
-alert(userIdProfile);
+                                $('rmxLiFFLayout').text(userIdProfile);
                                 var getParam = rmxGetParams();
                                 var toMenu = getParam.menu;
                                 var toCmd = getParam.CmdCommand;
@@ -119,7 +119,7 @@ alert(userIdProfile);
                                 } else if (toStatus == 'init' || toStatus == 'check') {
                                     //  alert('menuUrl: ' + menuUrl);
                                     try {
-                                        $("#rmxLiFFLayout").load(menuUrl);
+                                        // $("#rmxLiFFLayout").load(menuUrl);
                                     } catch (err) {
                                         console.log('err rmxLiFFLayout: ' + error);
                                     }
