@@ -3,7 +3,10 @@
 error_reporting(-1);
 ini_set('display_errors', 'On');
 
-// include($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
+include_once("zApiFunction.php");
+include_once("zMenuFunction.php");
+include_once($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
+
 
 $GLOBALS['COMPANY_URL'] =  COMPANY_URL;
 $GLOBALS['REGISTER_URL'] =   REGISTER_URL;
