@@ -3,8 +3,9 @@
 error_reporting(-1);
 ini_set('display_errors', 'On');
 
-include("define_Global.php");
-include("rmxWebhookFunction.php");
+include_once("define_Global.php");
+include_once("rmxWebhookFunction.php");
+include_once("menu/zApiFunction.php");
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
