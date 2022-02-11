@@ -62,5 +62,5 @@ echo $LineId;
     </div>
 </div>
 <script>
-    $("#rmxLiFFLayout").hide();
+    $(".loader").hide();
 </script>
