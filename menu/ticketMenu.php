@@ -77,6 +77,7 @@ $status = $getDataFromUrl->status;
         // }
 
         $(function() {
+            alert('Hi');
             $(".loader").hide();
         });
     </script>
