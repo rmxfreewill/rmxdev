@@ -57,7 +57,7 @@ if ($status == 'init') {
 
     $(function() {
         var sFlag = "<?php echo $sFlag; ?>";
-        alert($sFlag);
+        alert(sFlag);
         $(".loader").hide();
     });
 </script>
