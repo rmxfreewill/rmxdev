@@ -19,7 +19,7 @@ try {
 
     if ($sFlag != '0') {
         $getTicketFromDatabase = getTicketFromDatabase($getDataFromUrl, $getDataFromDatabase);
-        // showTicketList($getTicketFromDatabase);
+        showTicketList($getTicketFromDatabase);
     } else {
         echo $notFound;
         echo  $getDataFromDatabase->status;

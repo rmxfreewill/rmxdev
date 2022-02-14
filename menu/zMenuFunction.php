@@ -381,32 +381,32 @@ function showTicketList($RetCommand)
                     for ($n = 0; $n < $nRLen; $n++) {
                         $sRow = $asRow[$n];
                         echo 'sRow: ' . json_encode($sRow);
-                        $asData = explode("^c", $sRow);
-                        $nDLen = count($asData);
-                        if ($nDLen > 0) {
-                            $sTicketNo = $asData[0];
-                            $sTab = $sTab . "<a class='tablink' href='#' "
-                                . "onclick=\"openPage('div" . $sTicketNo . "_" .
-                                "', this, 'red')\">" . $sTicketNo . "</a>";
+                        // $asData = explode("^c", $sRow);
+                        // $nDLen = count($asData);
+                        // if ($nDLen > 0) {
+                        //     $sTicketNo = $asData[0];
+                        //     $sTab = $sTab . "<a class='tablink' href='#' "
+                        //         . "onclick=\"openPage('div" . $sTicketNo . "_" .
+                        //         "', this, 'red')\">" . $sTicketNo . "</a>";
 
-                            $sPage = $sPage . "<div id='div" . $sTicketNo . "_" .
-                                "' class='tabcontent'>";
-                            $sPage = $sPage . "<table class='tblticket'>";
+                        //     $sPage = $sPage . "<div id='div" . $sTicketNo . "_" .
+                        //         "' class='tabcontent'>";
+                        //     $sPage = $sPage . "<table class='tblticket'>";
 
-                            for ($r = 0; $r < $nDLen; $r++) {
-                                $sC = $asCol[$r];
-                                $sD = $asData[$r];
+                        //     for ($r = 0; $r < $nDLen; $r++) {
+                        //         $sC = $asCol[$r];
+                        //         $sD = $asData[$r];
 
-                                $sPage = $sPage . "<tr><th>" . $sC
-                                    . "</th><td class='textLeft'>" . $sD . "</td></tr>";
-                            }
-                            $sPage = $sPage . "</table></div>";
-                        }
+                        //         $sPage = $sPage . "<tr><th>" . $sC
+                        //             . "</th><td class='textLeft'>" . $sD . "</td></tr>";
+                        //     }
+                        //     $sPage = $sPage . "</table></div>";
+                        // }
                     }
 
-                    $sTab = "<div class='scrollmenu'>" . $sTab . "</div>";
-                    echo $sTab;
-                    echo $sPage;
+                    // $sTab = "<div class='scrollmenu'>" . $sTab . "</div>";
+                    // echo $sTab;
+                    // echo $sPage;
                 }
             }
         }
