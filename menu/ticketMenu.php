@@ -24,12 +24,11 @@ try {
         echo $notFound;
         echo  $getDataFromDatabase->status;
     }
+    echo $sFlag;
 } catch (\Throwable $th) {
     $sFlag = '0';
     echo $th;
 }
-
-
 
 ?>
 
