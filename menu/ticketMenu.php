@@ -3,17 +3,8 @@
 error_reporting(-1);
 ini_set('display_errors', 'On');
 
-include_once($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
 
-$GLOBALS['COMPANY_URL'] =  COMPANY_URL;
-$GLOBALS['REGISTER_URL'] =   REGISTER_URL;
-$GLOBALS['COMPANY_CODE'] =   COMPANY_CODE;
-$GLOBALS['COMPANY_URL'] =   COMPANY_URL;
-$GLOBALS['LIFF_ID'] =   LIFF_ID;
-$GLOBALS['sURL'] =   sURL;
-
-
-$getDataFromUrl = getDataFromUrl($GLOBALS['COMPANY_CODE'], $GLOBALS['COMPANY_URL'], $GLOBALS['REGISTER_URL']);
+$getDataFromUrl = getDataFromUrlv2();
 $status = $getDataFromUrl->status;
 
 // if ($status == 'init') {

@@ -3,6 +3,16 @@
 error_reporting(-1);
 ini_set('display_errors', 'On');
 
+include_once($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
+
+$GLOBALS['COMPANY_URL'] =  COMPANY_URL;
+$GLOBALS['REGISTER_URL'] =   REGISTER_URL;
+$GLOBALS['COMPANY_CODE'] =   COMPANY_CODE;
+$GLOBALS['COMPANY_URL'] =   COMPANY_URL;
+$GLOBALS['LIFF_ID'] =   LIFF_ID;
+$GLOBALS['sURL'] =   sURL;
+
+
 // include($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
 // include($_SERVER['DOCUMENT_ROOT'] . "/rmxLineFunction.php");
 
@@ -13,6 +23,7 @@ ini_set('display_errors', 'On');
 //     $response = post_web_content($CompanyUrl, $curl_data);
 //     return $response;
 // }
+
 
 function sendQuery($type, $CompanyUrl, $userId, $CompanyId, $Command)
 {
@@ -25,6 +36,60 @@ function sendQuery($type, $CompanyUrl, $userId, $CompanyId, $Command)
     $curl_data = "LineId=" . $userId . "&CompanyCode=" . $CompanyId . $curlCmd;
     $response = postWebContent($CompanyUrl, $curl_data);
     return $response;
+}
+
+function getDataFromUrlv2()
+{
+    $objData = new stdClass;
+
+    $menu = '';
+    if (isset($_POST['menu']))
+        $menu = $_POST['menu'];
+    if (isset($_GET['menu']))
+        $menu = $_GET['menu'];
+
+    $status = '';
+    if (isset($_POST['status']))
+        $status = $_POST['status'];
+    if (isset($_GET['status']))
+        $status = $_GET['status'];
+
+    $LineId = '';
+    if (isset($_POST['LineId']))
+        $LineId = $_POST['LineId'];
+    if (isset($_GET['LineId']))
+        $LineId = $_GET['LineId'];
+
+    $CmdCommand = '';
+    if (isset($_POST['CmdCommand']))
+        $CmdCommand = $_POST['CmdCommand'];
+    if (isset($_GET['CmdCommand']))
+        $CmdCommand = $_GET['CmdCommand'];
+
+    $LineDisplay = '';
+    $UserName = '';
+    $sSoldToCode = '';
+    $sSoldToName = '';
+    $Tel = '';
+    $EMail = '';
+
+
+    if ($status == 'check') {
+    } else {
+        $CmdCommand = "call sp_main_check_register ('" . $LineId . "','" .  $GLOBALS['COMPANY_CODE'] . "')";
+    }
+
+    $objData->menu = $menu;
+    $objData->status = $status;
+    $objData->LineId = $LineId;
+    $objData->CompanyUrl = $GLOBALS['COMPANY_URL'];
+    $objData->CompanyCode = $GLOBALS['COMPANY_CODE'];
+    $objData->RegisterUrl = $GLOBALS['REGISTER_URL'];
+    $objData->CmdCommand = $CmdCommand;
+
+
+
+    return $objData;
 }
 
 function getDataFromUrl($CompanyCode, $CompanyUrl, $RegisterUrl)
@@ -87,7 +152,7 @@ function getDataFromDatabase($CompanyUrl, $objParam) //select $sFlagMsg,$nFlag,$
 {
     // echo json_encode('CmdCommand: ' . $objParam);
     $objData = new stdClass;
-    
+
     $CmdCommand = $objParam->CmdCommand;
     $RetCommand = sendQuery(
         'Command',
