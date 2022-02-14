@@ -58,6 +58,6 @@ if ($status == 'init') {
     $(function() {
         var sFlag = "<?php echo $sFlag; ?>";
         alert(sFlag);
-        $("#loader").hide();
+        $("#rmxLoader").hide();
     });
 </script>
