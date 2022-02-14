@@ -63,6 +63,8 @@ try {
 
     $(function() {
         var sFlag = "<?php echo $sFlag; ?>";
-        sFlag != '' ?? $("#rmxLoader").hide();
+        if (sFlag != '') {
+            $("#rmxLoader").hide();
+        }
     });
 </script>
