@@ -5,26 +5,24 @@ ini_set('display_errors', 'On');
 
 include_once("zMenuFunction.php");
 
+$sFlag = '';
+
 $getDataFromUrl = getDataFromUrlv2();
 $status = $getDataFromUrl->status;
 
 if ($status == 'init') {
-    $notFound =  "<center><h2><br>Not Found User</h2></center>";
+    $notFound =  "<center><h2><br>Not Found User</h2></center><p>";
     $getDataFromDatabase = getDataFromDatabase($getDataFromUrl);
     $sFlag = $getDataFromDatabase->sFlag;
 }
 
-echo $sFlag;
-
-
-// if ($sFlag != '0') {
-// $getTicketFromDatabase = getTicketFromDatabase($getDataFromUrl, $getDataFromDatabase);
-// showTicketList($getTicketFromDatabase);
-// } else {
-// echo $notFound;
-// echo "<p>";
-// echo  $getDataFromDatabase->status;
-// }
+if ($sFlag != '0') {
+    $getTicketFromDatabase = getTicketFromDatabase($getDataFromUrl, $getDataFromDatabase);
+    showTicketList($getTicketFromDatabase);
+} else {
+    echo $notFound;
+    echo  $getDataFromDatabase->status;
+}
 
 ?>
 
@@ -58,6 +56,7 @@ echo $sFlag;
     // }
 
     $(function() {
-        $("#rmxLoader").hide();
+        var sFlag = "<?php echo $sFlag; ?>";
+        sFlag != '' ?? $("#rmxLoader").hide();
     });
 </script>

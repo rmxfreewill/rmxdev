@@ -8,14 +8,10 @@ include_once("zMenuFunction.php");
 include_once($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
 include_once($_SERVER['DOCUMENT_ROOT'] . "/rmxWebhookFunction.php");
 
-
-$GLOBALS['COMPANY_URL'] =  COMPANY_URL;
-$GLOBALS['REGISTER_URL'] =   REGISTER_URL;
 $GLOBALS['COMPANY_CODE'] =   COMPANY_CODE;
-$GLOBALS['LIFF_ID'] =   LIFF_ID;
-$GLOBALS['sURL'] =   sURL;
 
-$sFlag = '0';
+
+$sFlag = '';
 $regisType = false;
 
 function regisForm($type)
@@ -67,22 +63,20 @@ function regisForm($type)
     return $regisForm;
 }
 
-$getDataFromUrl = getDataFromUrl($GLOBALS['COMPANY_CODE'], $GLOBALS['COMPANY_URL'], $GLOBALS['REGISTER_URL']);
+$getDataFromUrl = getDataFromUrlv2();
 $status = $getDataFromUrl->status;
+
 if ($status == 'check') {
     registerDataToDatabase($getDataFromUrl);
-    // $getData = getDataFromDatabase($GLOBALS['REGISTER_URL'], $getDataFromUrl);
-    $sFlag = $getData->sFlag;
-} else if ($status == 'init') {
-    $getData = getDataFromDatabase($getDataFromUrl);
-    $sFlag = $getData->sFlag;
 }
+
+$getData = getDataFromDatabase($getDataFromUrl);
+$sFlag = $getData->sFlag;
 
 if ($sFlag == '4') {
     $LINEID = $getDataFromUrl->LineId;
     rmxChangeMemberRichMenu('MEMBER', $LINEID);
 }
-
 
 ?>
 <!DOCTYPE HTML>
@@ -132,8 +126,10 @@ if ($sFlag == '4') {
         if (sFlag == '4') {
             rmxCloseWindow();
         }
+
         $(function() {
-            $("#rmxLoader").hide();
+            var sFlag = "<?php echo $sFlag; ?>";
+            sFlag != '' ?? $("#rmxLoader").hide();
         });
     </script>
 </body>
