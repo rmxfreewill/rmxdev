@@ -11,7 +11,6 @@ $getDataFromUrl = getDataFromUrlv2();
 $status = $getDataFromUrl->status;
 
 try {
-
     if ($status == 'init') {
         $notFound =  "<center><h2><br>Not Found User</h2></center><p>";
         $getDataFromDatabase = getDataFromDatabase($getDataFromUrl);
