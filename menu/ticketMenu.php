@@ -24,9 +24,9 @@ try {
         echo $notFound;
         echo  $getDataFromDatabase->status;
     }
-    
 } catch (\Throwable $th) {
     $sFlag = '0';
+    echo $th;
 }
 
 
@@ -65,6 +65,5 @@ try {
     $(function() {
         var sFlag = "<?php echo $sFlag; ?>";
         sFlag != '' ?? $("#rmxLoader").hide();
-        sFlag == '0' ?? alert("<?php echo $th; ?>");
     });
 </script>
