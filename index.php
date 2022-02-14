@@ -90,7 +90,6 @@ $Function != '' ?? $Function = $menu;
                                     menuUrl = "menu/registerMenu.php" + paramS;
                                 } else if (toMenu == "ticket") {
                                     menuUrl = "menu/ticketMenu.php" + paramS;
-                                    url = sUrl + "frmView.php" + para;
                                 } else if (toMenu == "profile") {
                                     menuUrl = "menu/profileMenu.php" + paramS;
                                 } else if (toMenu == "search") {
