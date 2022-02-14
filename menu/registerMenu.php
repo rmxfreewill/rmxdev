@@ -131,10 +131,13 @@ if ($sFlag == '4') {
             }
         }
 
-        var sFlag = "<?php echo $sFlag; ?>";
+
         if (sFlag == '4') {
             rmxCloseWindow();
         }
+        $(function() {
+            $("#rmxLoader").hide();
+        });
     </script>
 </body>
 
