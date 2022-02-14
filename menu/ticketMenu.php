@@ -3,7 +3,7 @@
 error_reporting(-1);
 ini_set('display_errors', 'On');
 
-include_once("/zMenuFunction.php");
+include_once("zMenuFunction.php");
 
 $getDataFromUrl = getDataFromUrlv2();
 $status = $getDataFromUrl->status;
