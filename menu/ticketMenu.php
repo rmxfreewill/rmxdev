@@ -3,14 +3,14 @@
 error_reporting(-1);
 ini_set('display_errors', 'On');
 
-include_once("zMenuFunction.php");
-
 $sFlag = '';
 
-$getDataFromUrl = getDataFromUrlv2();
-$status = $getDataFromUrl->status;
-
 try {
+    include_once("zMenuFunction.php");
+
+    $getDataFromUrl = getDataFromUrlv2();
+    $status = $getDataFromUrl->status;
+
     if ($status == 'init') {
         $notFound =  "<center><h2><br>Not Found User</h2></center><p>";
         $getDataFromDatabase = getDataFromDatabase($getDataFromUrl);
@@ -24,6 +24,7 @@ try {
         echo $notFound;
         echo  $getDataFromDatabase->status;
     }
+    
 } catch (\Throwable $th) {
     $sFlag = '0';
 }
