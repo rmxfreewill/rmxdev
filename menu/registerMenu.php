@@ -98,9 +98,6 @@ if ($sFlag == '4') {
         ?>
     </div>
     <script>
-        var urlS = new URL(document.URL);
-        // alert('urlS: ' + urlS);
-
         function registerCheck() {
             var sUserName = 'rmxadmin';
             var sLineDisplay = 'rmxadmin';
@@ -142,3 +139,5 @@ if ($sFlag == '4') {
 </body>
 
 </html>
+
+<!-- var urlS = new URL(document.URL); -->
