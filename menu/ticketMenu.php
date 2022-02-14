@@ -10,7 +10,7 @@ $status = $getDataFromUrl->status;
 
 if ($status == 'init') {
     $notFound =  "<center><h2><br>Not Found User</h2></center>";
-    $getDataFromDatabase = getDataFromDatabase($GLOBALS['COMPANY_URL'], $getDataFromUrl);
+    $getDataFromDatabase = getDataFromDatabase( $getDataFromUrl);
     $sFlag = $getDataFromDatabase->sFlag;
 }
 
