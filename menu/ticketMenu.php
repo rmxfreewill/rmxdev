@@ -14,6 +14,8 @@ if ($status == 'init') {
     $sFlag = $getDataFromDatabase->sFlag;
 }
 
+echo $sFlag;
+
 
 // if ($sFlag != '0') {
 // $getTicketFromDatabase = getTicketFromDatabase($getDataFromUrl, $getDataFromDatabase);
@@ -56,8 +58,6 @@ if ($status == 'init') {
     // }
 
     $(function() {
-        var sFlag = "<?php echo $sFlag; ?>";
-        alert(sFlag);
         $("#rmxLoader").hide();
     });
 </script>
