@@ -10,19 +10,26 @@ $sFlag = '';
 $getDataFromUrl = getDataFromUrlv2();
 $status = $getDataFromUrl->status;
 
-if ($status == 'init') {
-    $notFound =  "<center><h2><br>Not Found User</h2></center><p>";
-    $getDataFromDatabase = getDataFromDatabase($getDataFromUrl);
-    $sFlag = $getDataFromDatabase->sFlag;
+try {
+
+    if ($status == 'init') {
+        $notFound =  "<center><h2><br>Not Found User</h2></center><p>";
+        $getDataFromDatabase = getDataFromDatabase($getDataFromUrl);
+        $sFlag = $getDataFromDatabase->sFlag;
+    }
+
+    if ($sFlag != '0') {
+        $getTicketFromDatabase = getTicketFromDatabase($getDataFromUrl, $getDataFromDatabase);
+        showTicketList($getTicketFromDatabase);
+    } else {
+        echo $notFound;
+        echo  $getDataFromDatabase->status;
+    }
+} catch (\Throwable $th) {
+    $sFlag = '0';
 }
 
-if ($sFlag != '0') {
-    $getTicketFromDatabase = getTicketFromDatabase($getDataFromUrl, $getDataFromDatabase);
-    showTicketList($getTicketFromDatabase);
-} else {
-    echo $notFound;
-    echo  $getDataFromDatabase->status;
-}
+
 
 ?>
 
@@ -58,5 +65,6 @@ if ($sFlag != '0') {
     $(function() {
         var sFlag = "<?php echo $sFlag; ?>";
         sFlag != '' ?? $("#rmxLoader").hide();
+        sFlag == '0' ?? alert("<?php echo $th; ?>");
     });
 </script>
