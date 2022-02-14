@@ -148,10 +148,12 @@ function getDataFromUrl($CompanyCode, $CompanyUrl, $RegisterUrl)
     return $objData;
 }
 
-function getDataFromDatabase($CompanyUrl, $objParam) //select $sFlagMsg,$nFlag,$sTUserName,$sTEMail,$sTMobileNo;
+function getDataFromDatabase($objParam) //select $sFlagMsg,$nFlag,$sTUserName,$sTEMail,$sTMobileNo;
 {
     // echo json_encode('CmdCommand: ' . $objParam);
     $objData = new stdClass;
+
+    $CompanyUrl = $GLOBALS['COMPANY_URL'];
 
     $CmdCommand = $objParam->CmdCommand;
     $RetCommand = sendQuery(

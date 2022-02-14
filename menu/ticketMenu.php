@@ -8,11 +8,11 @@ include_once("zMenuFunction.php");
 $getDataFromUrl = getDataFromUrlv2();
 $status = $getDataFromUrl->status;
 
-// if ($status == 'init') {
-//     $notFound =  "<center><h2><br>Not Found User</h2></center>";
-//     $getDataFromDatabase = getDataFromDatabase($GLOBALS['COMPANY_URL'], $getDataFromUrl);
-//     $sFlag = $getDataFromDatabase->sFlag;
-// }
+if ($status == 'init') {
+    $notFound =  "<center><h2><br>Not Found User</h2></center>";
+    $getDataFromDatabase = getDataFromDatabase($GLOBALS['COMPANY_URL'], $getDataFromUrl);
+    $sFlag = $getDataFromDatabase->sFlag;
+}
 
 
 // if ($sFlag != '0') {
@@ -56,7 +56,7 @@ $status = $getDataFromUrl->status;
     // }
 
     $(function() {
-        alert('Hi');
+
         $(".loader").hide();
     });
 </script>

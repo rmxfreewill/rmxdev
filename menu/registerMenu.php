@@ -74,7 +74,7 @@ if ($status == 'check') {
     // $getData = getDataFromDatabase($GLOBALS['REGISTER_URL'], $getDataFromUrl);
     $sFlag = $getData->sFlag;
 } else if ($status == 'init') {
-    $getData = getDataFromDatabase($GLOBALS['COMPANY_URL'], $getDataFromUrl);
+    $getData = getDataFromDatabase($getDataFromUrl);
     $sFlag = $getData->sFlag;
 }
 
