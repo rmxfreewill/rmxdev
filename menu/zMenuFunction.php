@@ -39,6 +39,8 @@ function sendQuery($type, $CompanyUrl, $userId, $CompanyId, $Command)
     return $response;
 }
 
+
+
 function getDataFromUrlv2()
 {
     $objData = new stdClass;
@@ -235,16 +237,11 @@ function registerDataToDatabase($objParam)
 
 
 
+    $curl_data = "LineId=" . $LineId . "&CompanyCode=" . $CompanyCode
+    . "&LineDisplay=" . $LineDisplay . "&UserName=" . $UserName
+    . "&Tel=" . $Tel . "&EMail=" . $EMail;
 
-    $RetCommand = register_command(
-        $RegisterUrl,
-        $LineId,
-        $CompanyCode,
-        $LineDisplay,
-        $UserName,
-        $Tel,
-        $EMail
-    );
+    $RetCommand = postWebContent($RegisterUrl, $curl_data);
 
     if ($RetCommand) {
         $ASRet = [];
