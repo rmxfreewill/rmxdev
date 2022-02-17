@@ -16,11 +16,12 @@ $status = $getDataFromUrl->status;
 if ($status == 'check') {
     registerDataToDatabase($getDataFromUrl);
 }
+
 $getData = getDataFromDatabase($getDataFromUrl);
 $sFlag = $getData->sFlag;
 if ($sFlag == '4') {
     // rmxChangeRichMenu('MEMBER', $LineId);
-    echo 'ChangeMenu';
+    echo "ChangeMenu: $LineId";
 } else {
 ?>
     <div class="m-3 bg-white shadow bg-white rounded">

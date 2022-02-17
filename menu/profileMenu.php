@@ -9,7 +9,7 @@ include_once("zMenuFunction.php");
 include_once($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
 
 
-$getDataFromUrl = getDataFromUrlv2();
+$getDataFromUrl = getDataFromUrl();
 $LineId = $getDataFromUrl->LineId;
 
 try {

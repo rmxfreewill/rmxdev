@@ -61,6 +61,9 @@ function registerDataToDatabase($objParam)
     } else {
         $objData->sFlag = '0';
     }
+
+    sleep(3);
+    
     return $objData;
 }
 
