@@ -35,9 +35,12 @@ function rmxSelectMenu(sUrl = String ,toMenu = String, userId = String,sCmd = St
     return rmxSelectMenu;
 }
 
-function registerCheck() {
+function registerCheck(param) {
     var sUserName = 'rmxadmin';
     var sLineDisplay = 'rmxadmin';
+    //
+    var sUrl = param[0];
+    var userIdProfile = param[1];
     //
     var sCompanyCode = "00001";
     var sEMail = document.getElementById('txtEMail').value;
@@ -53,9 +56,6 @@ function registerCheck() {
         } else {
             var toMenu = 'register';
             var toStatus = 'check';
-            var sUrl = "<?php echo sURL; ?>";
-            alert(sUrl);
-            var userIdProfile = "<? echo  $getDataFromUrl->LineId; ?>";
             var sCmd = sLineDisplay + "^c" + sUserName + "^c" + sTel + "^c" + sEMail;
             var urlSelectMenu = rmxSelectMenu(sUrl, toMenu, userIdProfile, sCmd, toStatus);
             var param = urlSelectMenu.paramS;

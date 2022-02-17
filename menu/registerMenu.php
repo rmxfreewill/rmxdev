@@ -11,21 +11,18 @@ $sFlag = '';
 $regisType = false;
 
 $getDataFromUrl = getDataFromUrl();
+$LineId = $getDataFromUrl->LineId;
 $status = $getDataFromUrl->status;
-
-echo $status;
 if ($status == 'check') {
     registerDataToDatabase($getDataFromUrl);
 }
-
 $getData = getDataFromDatabase($getDataFromUrl);
 $sFlag = $getData->sFlag;
-
 if ($sFlag == '4') {
-    $LINEID = $getDataFromUrl->LineId;
-    // rmxChangeRichMenu('MEMBER', $LINEID);
+    // rmxChangeRichMenu('MEMBER', $LineId);
     echo 'ChangeMenu';
 } else {
+    $registerCheckParam = array(sURL, $LineId);
 ?>
     <div class="m-3 bg-white shadow bg-white rounded">
         <div class="p-4">
@@ -42,7 +39,9 @@ if ($sFlag == '4') {
                     <input type="tel" class="form-control form-control-lg" placeholder="Enter Mobile" name="txtTel" id="txtTel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" maxlength="10" required>
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-success btn-lg pt-3 pb-3 fw-bold rmxRegisterButton" type="button" name="btnLogin" id="btnLogin" onclick="registerCheck()">
+                    <button class="btn btn-success btn-lg pt-3 pb-3 fw-bold rmxRegisterButton" 
+                    type="button" name="btnLogin" id="btnLogin" 
+                    onclick="registerCheck(<?php echo $registerCheckParam; ?>)">
                         REGISTER
                     </button>
                 </div>
