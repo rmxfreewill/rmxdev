@@ -4,14 +4,8 @@ error_reporting(-1);
 ini_set('display_errors', 'On');
 
 include($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
-// include("define_Global.php");
 include("function/globalMenuFunc.php");
 include("function/registerMenuFunc.php");
-
-
-$GLOBALS['RICHMENU_ID'] =  RICHMENU_ID;
-$GLOBALS['BEARER_TOKEN'] =  BEARER_TOKEN;
-$GLOBALS['COMPANY_CODE'] =   COMPANY_CODE;
 
 $sFlag = '';
 $regisType = false;

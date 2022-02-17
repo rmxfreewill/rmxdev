@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 function postWebContent($url, $curl_data)
 {
     $options = array(
@@ -85,15 +82,15 @@ function getDataFromUrl()
 
     if ($status == 'check') {
     } else {
-        $CmdCommand = "call sp_main_check_register ('" . $LineId . "','" .  $GLOBALS['COMPANY_CODE'] . "')";
+        $CmdCommand = "call sp_main_check_register ('" . $LineId . "','" .  COMPANY_CODE . "')";
     }
 
     $objData->menu = $menu;
     $objData->status = $status;
     $objData->LineId = $LineId;
-    $objData->CompanyUrl = $GLOBALS['COMPANY_URL'];
-    $objData->CompanyCode = $GLOBALS['COMPANY_CODE'];
-    $objData->RegisterUrl = $GLOBALS['REGISTER_URL'];
+    $objData->CompanyUrl = COMPANY_URL;
+    $objData->CompanyCode = COMPANY_CODE;
+    $objData->RegisterUrl = REGISTER_URL;
     $objData->CmdCommand = $CmdCommand;
 
 
@@ -107,7 +104,7 @@ function getDataFromDatabase($objParam)
     // echo json_encode('CmdCommand: ' . $objParam);
     $objData = new stdClass;
 
-    $CompanyUrl = $GLOBALS['COMPANY_URL'];
+    $CompanyUrl = COMPANY_URL;
 
     $CmdCommand = $objParam->CmdCommand;
     $RetCommand = sendQuery(
@@ -164,13 +161,13 @@ function rmxChangeRichMenu($type, $LINEID)
         $method = 'DELETE';
     } else if ($type == 'MEMBER') {
         $CURLOPT = CURLOPT_POST;
-        $RICHMENUID = $GLOBALS['RICHMENU_ID'];
+        $RICHMENUID = RICHMENU_ID;
         $url = "https://api.line.me/v2/bot/user/$LINEID/richmenu/$RICHMENUID";
         $method = "POST";
     }
     $data = array();
     $headers = [
-        "Authorization: Bearer " . $GLOBALS['BEARER_TOKEN']
+        "Authorization: Bearer " . BEARER_TOKEN
     ];
     try {
 
