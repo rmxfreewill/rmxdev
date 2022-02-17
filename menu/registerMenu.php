@@ -24,7 +24,7 @@ if ($sFlag == '4') {
     echo "ChangeMenu: $LineId";
 } else {
 ?>
-    <div class="m-3 bg-white shadow bg-white rounded">
+    <div class="m-3 bg-white shadow bg-white rounded" id="regisForm" hidden>
         <div class="p-4">
             <div class="col-12 text-center">
                 <h2>Register</h2>
@@ -57,6 +57,8 @@ if ($sFlag == '4') {
             var sStatus = "<?php echo $status; ?>";
             if (sStatus == 'check') {
                 location.assign(sUrl + "?menu=register");
+            }else{
+                $("#regisForm").show();
             }
 
             var sFlag = "<?php echo $sFlag; ?>";
