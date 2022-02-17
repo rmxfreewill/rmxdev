@@ -8,6 +8,7 @@ include_once("zMenuFunction.php");
 include_once($_SERVER['DOCUMENT_ROOT'] . "/rmxWebhookFunction.php");
 
 include($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
+include("function/registerMenuFunc.php");
 
 $GLOBALS['COMPANY_CODE'] =   COMPANY_CODE;
 
