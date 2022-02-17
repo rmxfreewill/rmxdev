@@ -24,7 +24,7 @@ if ($sFlag == '4') {
     echo "ChangeMenu: $LineId";
 } else {
 ?>
-    <div class="m-3 bg-white shadow bg-white rounded" id="regisForm">
+    <div class="m-3 bg-white shadow bg-white rounded" id="regisForm" hidden>
         <div class="p-4">
             <div class="col-12 text-center">
                 <h2>Register</h2>
@@ -53,7 +53,6 @@ if ($sFlag == '4') {
         }
 
         $(function() {
-            $("#regisForm").hide();
             var sUrl = "<?php echo sURL; ?>";
             var sStatus = "<?php echo $status; ?>";
             if (sStatus == 'check') {
@@ -62,8 +61,8 @@ if ($sFlag == '4') {
 
             var sFlag = "<?php echo $sFlag; ?>";
             if (sFlag != '') {
+                $("#regisForm").removeAttr("hidden");
                 $("#rmxLoader").hide();
-                $("#regisForm").show();
             } else if (sFlag == '4') {
                 rmxCloseWindow();
             }
