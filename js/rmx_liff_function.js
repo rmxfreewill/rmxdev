@@ -39,7 +39,7 @@ function registerCheck() {
     var sUserName = 'rmxadmin';
     var sLineDisplay = 'rmxadmin';
     //
-    var sCompanyCode = "<?php echo $GLOBALS['COMPANY_CODE']; ?>";
+    var sCompanyCode = "00001";
     var sEMail = document.getElementById('txtEMail').value;
     //
     var sTel = document.getElementById('txtTel').value;
