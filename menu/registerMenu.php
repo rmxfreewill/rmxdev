@@ -38,43 +38,19 @@ if ($sFlag == '4') {
                     <input type="tel" class="form-control form-control-lg" placeholder="Enter Mobile" name="txtTel" id="txtTel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" maxlength="10" required>
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-success btn-lg pt-3 pb-3 fw-bold rmxRegisterButton" type="button" name="btnLogin" id="btnLogin" onclick="registerCheck('aa','aa')">REGISTER</button>
+                    <button class="btn btn-success btn-lg pt-3 pb-3 fw-bold rmxRegisterButton" type="button" name="btnLogin" id="btnLogin" onclick="registerButton()">REGISTER</button>
                 </div>
             </div>
         </div>
     </div>
     <script>
-        function registerCheck(sUrl, userIdProfile) {
-            var sUserName = 'rmxadmin';
-            var sLineDisplay = 'rmxadmin';
-            //
-            var sCompanyCode = "00001";
-            var sEMail = document.getElementById('txtEMail').value;
-            //
-            var sTel = document.getElementById('txtTel').value;
-            if (sTel == '') {
-                alert("Input Telephone / Mobile");
-            } else if (sEMail == '') {
-                alert("Input Email");
-            } else {
-                if (sTel.length < 8) {
-                    alert("Telephone / Mobile must be at least 8 digits long");
-                } else {
-                    var toMenu = 'register';
-                    var toStatus = 'check';
-                    var sCmd = sLineDisplay + "^c" + sUserName + "^c" + sTel + "^c" + sEMail;
-                    var urlSelectMenu = rmxSelectMenu(sUrl, toMenu, userIdProfile, sCmd, toStatus);
-                    var param = urlSelectMenu.paramS;
-                    var menuUrl = "menu/registerMenu.php" + param;
-                    alert(menuUrl);
-                    $("#rmxLiFFLayout").load(menuUrl);
-                }
-            }
+        function registerButton() {
+            var sUrl = "<?php echo sURL; ?>";
+            var userIdProfile = "<?php echo  $LineId; ?>";
+            registerCheck(sUrl, userIdProfile);
         }
 
         $(function() {
-            alert("<?php echo sURL; ?>");
-            alert("<?php echo  $LineId; ?>");
             var sFlag = "<?php echo $sFlag; ?>";
             if (sFlag != '') {
                 $("#rmxLoader").hide();
