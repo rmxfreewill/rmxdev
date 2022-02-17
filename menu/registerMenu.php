@@ -19,7 +19,7 @@ if ($status == 'check') {
 }
 
 ?>
-<div class="m-3 bg-white shadow bg-white rounded" id="regisForm" hidden>
+<div class="m-3 bg-white shadow bg-white rounded" id="regisForm">
     <div class="p-4">
         <div class="col-12 text-center">
             <h2>Register</h2>
@@ -67,7 +67,6 @@ if ($status == 'check') {
 
         } else {
             if (sFlag != '') {
-                $("#regisForm").removeAttr("hidden");
                 $("#rmxLoader").hide();
             }
         }
