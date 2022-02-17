@@ -22,7 +22,10 @@ $sFlag = $getData->sFlag;
 
 if ($sFlag == '4') {
     $LINEID = $getDataFromUrl->LineId;
-    rmxChangeRichMenu('MEMBER', $LINEID);
+    // rmxChangeRichMenu('MEMBER', $LINEID);
+    echo 'ChangeMenu';
+}else{
+    echo 'RegisForm';
 }
 
 ?>
