@@ -45,9 +45,15 @@ if ($sFlag == '4') {
         </div>
     </div>
     <script>
-        $(function() {
+        async function registerButton() {
+            $("#rmxLoader").show();
             var sUrl = "<?php echo sURL; ?>";
             var userIdProfile = "<?php echo  $LineId; ?>";
+            await registerCheck(sUrl, userIdProfile);
+        }
+
+        $(function() {
+            var sUrl = "<?php echo sURL; ?>";
             var sStatus = "<?php echo $status; ?>";
             if (sStatus == 'check') {
                 location.assign(sUrl + "?menu=register");
@@ -58,11 +64,6 @@ if ($sFlag == '4') {
                 $("#rmxLoader").hide();
             } else if (sFlag == '4') {
                 rmxCloseWindow();
-            }
-
-            async function registerButton() {
-                $("#rmxLoader").show();
-                await registerCheck(sUrl, userIdProfile);
             }
 
         });
