@@ -6,6 +6,9 @@ ini_set('display_errors', 'On');
 include("function/globalMenuFunc.php");
 include("function/registerMenuFunc.php");
 
+
+$GLOBALS['RICHMENU_ID'] =  RICHMENU_ID;
+$GLOBALS['BEARER_TOKEN'] =  BEARER_TOKEN;
 $GLOBALS['COMPANY_CODE'] =   COMPANY_CODE;
 
 $sFlag = '';

@@ -1,7 +1,6 @@
 <?php
 
-$GLOBALS['RICHMENU_ID'] =  RICHMENU_ID;
-$GLOBALS['BEARER_TOKEN'] =  BEARER_TOKEN;
+
 
 
 function postWebContent($url, $curl_data)
