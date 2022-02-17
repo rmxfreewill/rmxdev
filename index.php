@@ -51,7 +51,7 @@ $Function != '' ?? $Function = $menu;
     <!-- <div class="loader" id="rmxLoader"></div> -->
     <div class="container">
         <div class="row">
-            <div class="bg-white" id="rmxLiFFLayout"></div>
+            <div  id="rmxLiFFLayout"></div>
         </div>
     </div>
     <script>

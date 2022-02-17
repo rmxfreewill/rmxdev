@@ -29,14 +29,15 @@ if ($sFlag == '4') {
 }
 
 ?>
-
-<div class="col-12 mb-3 mt-3">
-    <h3>Register</h3>
-</div>
-<div class="col-12 mb-3">
-    <?php
-    echo regisForm($regisType);
-    ?>
+<div class="bg-white mb-3 mt-3">
+    <div class="col-12 p-3">
+        <h3>Register</h3>
+    </div>
+    <div class="col-12 p-3">
+        <?php
+        echo regisForm($regisType);
+        ?>
+    </div>
 </div>
 <script>
     $(function() {
