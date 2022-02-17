@@ -64,7 +64,7 @@ function registerDataToDatabase($objParam)
     return $objData;
 }
 
-function regisForm($type)
+function regisFormv1($type)
 {
     $arr[0] = '';
     $arr[1] = '';

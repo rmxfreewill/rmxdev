@@ -54,6 +54,7 @@ function registerCheck() {
             var toMenu = 'register';
             var toStatus = 'check';
             var sUrl = "<? echo sURL; ?>";
+            alert(sUrl);
             var userIdProfile = "<? echo  $getDataFromUrl->LineId; ?>";
             var sCmd = sLineDisplay + "^c" + sUserName + "^c" + sTel + "^c" + sEMail;
             var urlSelectMenu = rmxSelectMenu(sUrl, toMenu, userIdProfile, sCmd, toStatus);
