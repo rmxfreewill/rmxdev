@@ -80,7 +80,7 @@ function regisForm($type)
         ';
     } else {
         $regisForm = '
-        <div class="mb-3">
+        <div class="mb-2">
         <label for="psw" class="form-label form-label-lg"><b>Email</b></label>
         <input type="email" class="form-control form-control-lg"
             id="txtEMail" 
@@ -90,7 +90,7 @@ function regisForm($type)
             maxlength="40"
         required>
         </div>
-        <div class="mb-3">
+        <div class="mb-2">
         <label for="psw" class="form-label form-label-lg"><b>Mobile</b></label>
         <input type="tel" class="form-control form-control-lg"
             placeholder="Enter Mobile" 
