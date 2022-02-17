@@ -10,7 +10,7 @@
     background: url('loading3.gif') 50% 50% no-repeat #FAB003;
 }
 
-.rmxRegister {
+.rmxRegisterButton {
     display: block;
     width: 100%;
     border: none;
@@ -29,7 +29,7 @@
 .rmxbody {
     font-family: 'Kanit', sans-serif;
     /* background-color:  #FAB003 ; */
-    background-color:  #FDE7B3 ;
+    background-color:  #FCCF67 ;
 
 }
 

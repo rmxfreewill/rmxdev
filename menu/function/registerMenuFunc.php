@@ -100,7 +100,7 @@ function regisForm($type)
         required>
         </div>
         <div class="mb-3">
-        <button class="btn btn-success btn-lg rmxRegister pt-3 pb-3" type="button"  
+        <button class="btn btn-success btn-lg rmxRegisterButton pt-3 pb-3" type="button"  
             name="btnLogin" 
             id="btnLogin" 
             onclick="registerCheck()"

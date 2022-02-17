@@ -75,7 +75,7 @@ function ticketSearchScreen()
                 <input type="text" class="form-control form-control-lg p-3" id="txtTicketNo" value="">
             </div>
             <div class="mb-3 mt-2">
-                <button class="btn btn-success btn-lg rmxRegister pt-3 pb-3" type="button" id="btnSearch" onclick="checkSearch()">
+                <button class="btn btn-success btn-lg rmxRegisterButton pt-3 pb-3" type="button" id="btnSearch" onclick="checkSearch()">
                     SEARCH
                 </button>
             </div>
