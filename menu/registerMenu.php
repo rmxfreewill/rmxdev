@@ -61,9 +61,7 @@ if ($status == 'check') {
             rmxChangeRichMenu('MEMBER', $LineId);
             ?>
 
-            if (liff.getOS() != "web") {
-                liff.closeWindow();
-            }
+            rmxCloseWindow();
 
         } else {
             if (sFlag != '') {

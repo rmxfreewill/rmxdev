@@ -1,3 +1,9 @@
+function rmxCloseWindow() {
+    if (liff.getOS() != "web") {
+        liff.closeWindow();
+    }
+}
+
 function rmxGetParams() {
     var toStatus = null;
     var url = new URL(document.URL);
