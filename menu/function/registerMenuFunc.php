@@ -90,7 +90,7 @@ function regisForm($type)
             maxlength="40"
         required>
         </div>
-        <div class="mb-2">
+        <div class="mb-4">
         <label for="psw" class="form-label form-label-lg"><b>Mobile</b></label>
         <input type="tel" class="form-control form-control-lg"
             placeholder="Enter Mobile" 
