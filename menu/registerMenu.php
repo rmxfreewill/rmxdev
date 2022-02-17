@@ -24,35 +24,30 @@ if ($sFlag == '4') {
     $LINEID = $getDataFromUrl->LineId;
     // rmxChangeRichMenu('MEMBER', $LINEID);
     echo 'ChangeMenu';
-}else{
+} else {
     echo 'RegisForm';
 }
 
 ?>
-<!DOCTYPE HTML>
-<html>
 
-<body>
-    <div class="col-12 mb-3 mt-3">
-        <h3>Register</h3>
-    </div>
-    <div class="col-12 mb-3">
-        <?php
-        echo regisForm($regisType);
-        ?>
-    </div>
-    <script>
-        $(function() {
-            var sFlag = "<?php echo $sFlag; ?>";
-            if (sFlag != '') {
-                $("#rmxLoader").hide();
-            } else if (sFlag == '4') {
-                rmxCloseWindow();
-            }
-        });
-    </script>
-</body>
+<div class="col-12 mb-3 mt-3">
+    <h3>Register</h3>
+</div>
+<div class="col-12 mb-3">
+    <?php
+    echo regisForm($regisType);
+    ?>
+</div>
+<script>
+    $(function() {
+        var sFlag = "<?php echo $sFlag; ?>";
+        if (sFlag != '') {
+            $("#rmxLoader").hide();
+        } else if (sFlag == '4') {
+            rmxCloseWindow();
+        }
+    });
+</script>
 
-</html>
 
 <!-- var urlS = new URL(document.URL); -->
