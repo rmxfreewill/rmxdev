@@ -31,7 +31,7 @@ if ($sFlag == '4') {
 ?>
 <div class="mb-3 mt-3 bg-white shadow bg-white rounded">
     <div class="col-12 text-center">
-        <h3>Register</h3>
+        <h2>Register</h2>
     </div>
     <div class="col-12 p-3">
         <?php
