@@ -35,9 +35,19 @@ if ($sFlag == '4') {
             <h2>Register</h2>
         </div>
         <div class="col-12">
-            <?php
-            echo regisForm($regisType);
-            ?>
+            <div class="mb-2">
+                <label for="psw" class="form-label form-label-lg"><b>Email</b></label>
+                <input type="email" class="form-control form-control-lg" id="txtEMail" name="txtEMail" placeholder="Enter EMail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" maxlength="40" required>
+            </div>
+            <div class="mb-4">
+                <label for="psw" class="form-label form-label-lg"><b>Mobile</b></label>
+                <input type="tel" class="form-control form-control-lg" placeholder="Enter Mobile" name="txtTel" id="txtTel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" maxlength="10" required>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success btn-lg pt-3 pb-3 fw-bold rmxRegisterButton" type="button" name="btnLogin" id="btnLogin" onclick="registerCheck()">
+                    REGISTER
+                </button>
+            </div>
         </div>
     </div>
 </div>
