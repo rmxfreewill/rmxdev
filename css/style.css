@@ -29,7 +29,8 @@
 .rmxbody {
     font-family: 'Kanit', sans-serif;
     /* background-color:  #FAB003 ; */
-    background-color: #FAB003 0.6;
+    background-color: #FAB003;
+    opacity: 0.3;
 
 }
 
