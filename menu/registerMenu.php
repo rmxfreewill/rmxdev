@@ -15,10 +15,11 @@ $LineId = $getDataFromUrl->LineId;
 $status = $getDataFromUrl->status;
 if ($status == 'check') {
     registerDataToDatabase($getDataFromUrl);
+} else {
+    $getData = getDataFromDatabase($getDataFromUrl);
+    $sFlag = $getData->sFlag;
 }
 
-$getData = getDataFromDatabase($getDataFromUrl);
-$sFlag = $getData->sFlag;
 if ($sFlag == '4') {
     // rmxChangeRichMenu('MEMBER', $LineId);
     echo "ChangeMenu: $LineId";
@@ -64,6 +65,7 @@ if ($sFlag == '4') {
                 $("#regisForm").removeAttr("hidden");
                 $("#rmxLoader").hide();
             } else if (sFlag == '4') {
+                <?php  rmxChangeRichMenu('MEMBER', $LineId); ?>
                 rmxCloseWindow();
             }
 
