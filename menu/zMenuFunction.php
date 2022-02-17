@@ -26,76 +26,13 @@ $GLOBALS['sURL'] =   sURL;
 // }
 
 
-function sendQuery($type, $CompanyUrl, $userId, $CompanyId, $Command)
-{
-    if ($type = 'Command') {
-        $curlCmd = "&Command=" . $Command;
-    } else if ($type = 'QueryCommand') {
-        $curlCmd = "&QueryCommand=" . $Command;
-    }
-
-    $curl_data = "LineId=" . $userId . "&CompanyCode=" . $CompanyId . $curlCmd;
-    $response = postWebContent($CompanyUrl, $curl_data);
-    return $response;
-}
 
 
 
-function getDataFromUrlv2()
-{
-    $objData = new stdClass;
-
-    $menu = '';
-    if (isset($_POST['menu']))
-        $menu = $_POST['menu'];
-    if (isset($_GET['menu']))
-        $menu = $_GET['menu'];
-
-    $status = '';
-    if (isset($_POST['status']))
-        $status = $_POST['status'];
-    if (isset($_GET['status']))
-        $status = $_GET['status'];
-
-    $LineId = '';
-    if (isset($_POST['LineId']))
-        $LineId = $_POST['LineId'];
-    if (isset($_GET['LineId']))
-        $LineId = $_GET['LineId'];
-
-    $CmdCommand = '';
-    if (isset($_POST['CmdCommand']))
-        $CmdCommand = $_POST['CmdCommand'];
-    if (isset($_GET['CmdCommand']))
-        $CmdCommand = $_GET['CmdCommand'];
-
-    $LineDisplay = '';
-    $UserName = '';
-    $sSoldToCode = '';
-    $sSoldToName = '';
-    $Tel = '';
-    $EMail = '';
-
-
-    if ($status == 'check') {
-    } else {
-        $CmdCommand = "call sp_main_check_register ('" . $LineId . "','" .  $GLOBALS['COMPANY_CODE'] . "')";
-    }
-
-    $objData->menu = $menu;
-    $objData->status = $status;
-    $objData->LineId = $LineId;
-    $objData->CompanyUrl = $GLOBALS['COMPANY_URL'];
-    $objData->CompanyCode = $GLOBALS['COMPANY_CODE'];
-    $objData->RegisterUrl = $GLOBALS['REGISTER_URL'];
-    $objData->CmdCommand = $CmdCommand;
 
 
 
-    return $objData;
-}
-
-function getDataFromUrl($CompanyCode, $CompanyUrl, $RegisterUrl)
+function getDataFromUrlv1($CompanyCode, $CompanyUrl, $RegisterUrl)
 {
     $objData = new stdClass;
 
@@ -151,124 +88,9 @@ function getDataFromUrl($CompanyCode, $CompanyUrl, $RegisterUrl)
     return $objData;
 }
 
-function getDataFromDatabase($objParam) //select $sFlagMsg,$nFlag,$sTUserName,$sTEMail,$sTMobileNo;
-{
-    // echo json_encode('CmdCommand: ' . $objParam);
-    $objData = new stdClass;
-
-    $CompanyUrl = $GLOBALS['COMPANY_URL'];
-
-    $CmdCommand = $objParam->CmdCommand;
-    $RetCommand = sendQuery(
-        'Command',
-        $CompanyUrl,
-        '',
-        '',
-        $CmdCommand
-    );
-
-
-    try {
-        $objData->status = 200;
-        if ($RetCommand) {
-            $ASRet = [];
-            $ASRet = explode("^c", $RetCommand);
-            if (count($ASRet) >= 2) {
-                $sFlagMsg = $ASRet[0];
-                $sFlag = $ASRet[1];
-                $UserName = $ASRet[2];
-                $EMail = $ASRet[3];
-                $Tel = $ASRet[4];
-                $SoldToCode = $ASRet[5];
-                $SoldToName = $ASRet[6];
-                $ShipToCode = $ASRet[7];
-                $ShipToName = $ASRet[8];
-
-                $objData->UserName = $UserName;
-                $objData->EMail = $EMail;
-                $objData->Tel = $Tel;
-                $objData->SoldToCode = $SoldToCode;
-                $objData->SoldToName = $SoldToName;
-                $objData->ShipToCode = $ShipToCode;
-                $objData->ShipToName = $ShipToName;
-                $objData->sFlag = $sFlag;
-            }
-        } else {
-            $objData->sFlag = '0';
-        }
-        $objData->RetCommand = $RetCommand;
-    } catch (\Throwable $th) {
-        $objData->sFlag = '0';
-        $objData->status = $th;
-    }
-    $objData->LineId = $objParam->LineId;
-
-    return $objData;
-}
-
-function registerDataToDatabase($objParam)
-{
-    $objData = new stdClass;
-
-    $RegisterUrl = $objParam->RegisterUrl;
-    $LineId = $objParam->LineId;
-    $CompanyCode =  $objParam->CompanyCode;
-    $CmdCommand = $objParam->CmdCommand;
-
-    $ASRet = [];
-    $ASRet = explode("^c", $CmdCommand);
-    $LineDisplay = $ASRet[0];
-    $UserName = $ASRet[1];
-    $Tel = $ASRet[2];
-    $EMail = $ASRet[3];
-
-    // sp_comp_reqister_user ('Uc1dd5c7730988280c6c7731980655f7a','00001','rmxadmin','111','111','111','111','111','111');
-
-    // `sp_comp_reqister_user`(
-    //     IN $sLineId VARCHAR(50) CHARACTER SET UTF8 COLLATE utf8_unicode_ci
-    //     ,IN $sCompanyCode VARCHAR(50) CHARACTER SET UTF8 COLLATE utf8_unicode_ci
-    //     ,IN $sUserName VARCHAR(300) CHARACTER SET UTF8 COLLATE utf8_unicode_ci
-    //     ,IN $sSoldToCode VARCHAR(100) CHARACTER SET UTF8 COLLATE utf8_unicode_ci
-    //     ,IN $sSoldToName VARCHAR(300) CHARACTER SET UTF8 COLLATE utf8_unicode_ci
-    //     ,IN $sShipToCode VARCHAR(100) CHARACTER SET UTF8 COLLATE utf8_unicode_ci
-    //     ,IN $sShipToName VARCHAR(300) CHARACTER SET UTF8 COLLATE utf8_unicode_ci
-    //     ,IN $sMobileNo VARCHAR(100) CHARACTER SET UTF8 COLLATE utf8_unicode_ci
-    //     ,IN $sEMail VARCHAR(100) CHARACTER SET UTF8 COLLATE utf8_unicode_ci
 
 
 
-    $curl_data = "LineId=" . $LineId . "&CompanyCode=" . $CompanyCode
-    . "&LineDisplay=" . $LineDisplay . "&UserName=" . $UserName
-    . "&Tel=" . $Tel . "&EMail=" . $EMail;
-
-    $RetCommand = postWebContent($RegisterUrl, $curl_data);
-
-    if ($RetCommand) {
-        $ASRet = [];
-        $ASRet = explode("^c", $RetCommand);
-        if (count($ASRet) >= 5) {
-
-            $sFlagMsg = $ASRet[0];
-            $sFlag = $ASRet[1];
-            $UserName = $ASRet[2];
-            $Tel = $ASRet[3];
-            $EMail = $ASRet[4];
-            $SoldToCode = $ASRet[5];
-            $SoldToName = $ASRet[6];
-
-            $sShowMsg = '1';
-            if ($sFlag == '4') {
-                $sFlag = '5';
-                $sFlagMsg = "Register Complete";
-            }
-        }
-        $objData->RetCommand = $RetCommand;
-        $objData->sFlag = $sFlag;
-    } else {
-        $objData->sFlag = '0';
-    }
-    return $objData;
-}
 
 function getTicketFromDatabase($objParamFromUrl, $getDataFromDatabase)
 {

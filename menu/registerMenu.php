@@ -3,11 +3,7 @@
 error_reporting(-1);
 ini_set('display_errors', 'On');
 
-include_once("zApiFunction.php");
-include_once("zMenuFunction.php");
-include_once($_SERVER['DOCUMENT_ROOT'] . "/rmxWebhookFunction.php");
-
-// include($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
+include("function/globalMenuFunc.php");
 include("function/registerMenuFunc.php");
 
 $GLOBALS['COMPANY_CODE'] =   COMPANY_CODE;
@@ -15,7 +11,7 @@ $GLOBALS['COMPANY_CODE'] =   COMPANY_CODE;
 $sFlag = '';
 $regisType = false;
 
-$getDataFromUrl = getDataFromUrlv2();
+$getDataFromUrl = getDataFromUrl();
 $status = $getDataFromUrl->status;
 
 if ($status == 'check') {
@@ -27,7 +23,7 @@ $sFlag = $getData->sFlag;
 
 if ($sFlag == '4') {
     $LINEID = $getDataFromUrl->LineId;
-    rmxChangeMemberRichMenu('MEMBER', $LINEID);
+    rmxChangeRichMenu('MEMBER', $LINEID);
 }
 
 ?>
