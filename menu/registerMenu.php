@@ -46,6 +46,7 @@ if ($sFlag == '4') {
     </div>
     <script>
         async function registerButton() {
+            $("#rmxLoader").show();
             var sUrl = "<?php echo sURL; ?>";
             var userIdProfile = "<?php echo  $LineId; ?>";
             await registerCheck(sUrl, userIdProfile);
