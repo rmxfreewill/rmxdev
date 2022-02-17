@@ -55,11 +55,12 @@ if ($status == 'check') {
         }
 
         var sFlag = "<?php echo $sFlag; ?>";
+        alert(sFlag);
         if (sFlag != '') {
             $("#regisForm").removeAttr("hidden");
             $("#rmxLoader").hide();
         } else if (sFlag == '4') {
-            <?php rmxChangeRichMenu('MEMBER', $LineId); ?>
+            <?php //rmxChangeRichMenu('MEMBER', $LineId); ?>
             if (liff.getOS() != "web") {
                 liff.closeWindow();
             }
