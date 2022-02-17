@@ -8,7 +8,7 @@
     height: 100%;
     z-index: 9999;
     background: url('loading3.gif') 50% 50% no-repeat #FAB003;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 .rmxRegisterButton {
