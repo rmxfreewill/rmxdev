@@ -35,6 +35,36 @@ function rmxSelectMenu(sUrl = String ,toMenu = String, userId = String,sCmd = St
     return rmxSelectMenu;
 }
 
+function registerCheck() {
+    var sUserName = 'rmxadmin';
+    var sLineDisplay = 'rmxadmin';
+    //
+    var sCompanyCode = "<?php echo $GLOBALS['COMPANY_CODE']; ?>";
+    var sEMail = document.getElementById('txtEMail').value;
+    //
+    var sTel = document.getElementById('txtTel').value;
+    if (sTel == '') {
+        alert("Input Telephone / Mobile");
+    } else if (sEMail == '') {
+        alert("Input Email");
+    } else {
+        if (sTel.length < 8) {
+            alert("Telephone / Mobile must be at least 8 digits long");
+        } else {
+            var toMenu = 'register';
+            var toStatus = 'check';
+            var sUrl = "<? echo sURL; ?>";
+            var userIdProfile = "<? echo  $getDataFromUrl->LineId; ?>";
+            var sCmd = sLineDisplay + "^c" + sUserName + "^c" + sTel + "^c" + sEMail;
+            var urlSelectMenu = rmxSelectMenu(sUrl, toMenu, userIdProfile, sCmd, toStatus);
+            var param = urlSelectMenu.paramS;
+            var menuUrl = "menu/registerMenu.php" + param;
+            // alert(menuUrl);
+            $("#rmxLiFFLayout").load(menuUrl);
+        }
+    }
+}
+
 
 
 // async function initializeLiff() {

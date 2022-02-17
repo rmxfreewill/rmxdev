@@ -5,7 +5,7 @@ session_start();
 error_reporting(-1);
 ini_set('display_errors', 'On');
 
-include_once("define_Global.php");
+include("define_Global.php");
 include_once("menu/zApiFunction.php");
 include_once("menu/zMenuFunction.php");
 include_once("rmxLineFunction.php");

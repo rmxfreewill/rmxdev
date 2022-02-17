@@ -5,63 +5,14 @@ ini_set('display_errors', 'On');
 
 include_once("zApiFunction.php");
 include_once("zMenuFunction.php");
-include_once($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
 include_once($_SERVER['DOCUMENT_ROOT'] . "/rmxWebhookFunction.php");
+
+include($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
 
 $GLOBALS['COMPANY_CODE'] =   COMPANY_CODE;
 
-
 $sFlag = '';
 $regisType = false;
-
-function regisForm($type)
-{
-    $arr[0] = '';
-    $arr[1] = '';
-    if ($type == true) {
-        $regisForm = '
-        <div class="mb-3">
-        <label for="psw"><b>Email: </b></label>' . $arr[0] . '
-        <p><label for="psw"><b>Mobile: </b></label>' . $arr[1] . '
-        <p><button type="button"  name="btnLogin" id="btnLogin" onclick="closeClick()">
-            CLOSE
-        </button>
-        </div>
-        ';
-    } else {
-        $regisForm = '
-        <div class="mb-3">
-        <label for="psw" class="form-label form-label-lg"><b>Email</b></label>
-        <input type="email" class="form-control form-control-lg"
-            id="txtEMail" 
-            name="txtEMail"
-            placeholder="Enter EMail"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-            maxlength="40"
-        required>
-        </div>
-        <div class="mb-3">
-        <label for="psw" class="form-label form-label-lg"><b>Mobile</b></label>
-        <input type="tel" class="form-control form-control-lg"
-            placeholder="Enter Mobile" 
-            name="txtTel" id="txtTel" 
-            pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" 
-            maxlength="10"
-        required>
-        </div>
-        <div class="mb-3">
-        <button class="btn btn-success btn-lg rmxRegister pt-3 pb-3" type="button"  
-            name="btnLogin" 
-            id="btnLogin" 
-            onclick="registerCheck()"
-        >
-        REGISTER
-        </button>
-        </div>
-        ';
-    }
-    return $regisForm;
-}
 
 $getDataFromUrl = getDataFromUrlv2();
 $status = $getDataFromUrl->status;
@@ -92,45 +43,12 @@ if ($sFlag == '4') {
         ?>
     </div>
     <script>
-        function registerCheck() {
-            var sUserName = 'rmxadmin';
-            var sLineDisplay = 'rmxadmin';
-            //
-            var sCompanyCode = "<?php echo $GLOBALS['COMPANY_CODE']; ?>";
-            var sEMail = document.getElementById('txtEMail').value;
-            //
-            var sTel = document.getElementById('txtTel').value;
-            if (sTel == '') {
-                alert("Input Telephone / Mobile");
-            } else if (sEMail == '') {
-                alert("Input Email");
-            } else {
-                if (sTel.length < 8) {
-                    alert("Telephone / Mobile must be at least 8 digits long");
-                } else {
-                    var toMenu = 'register';
-                    var toStatus = 'check';
-                    var sUrl = "<? echo sURL; ?>";
-                    var userIdProfile = "<? echo  $getDataFromUrl->LineId; ?>";
-                    var sCmd = sLineDisplay + "^c" + sUserName + "^c" + sTel + "^c" + sEMail;
-                    var urlSelectMenu = rmxSelectMenu(sUrl, toMenu, userIdProfile, sCmd, toStatus);
-                    var param = urlSelectMenu.paramS;
-                    var menuUrl = "menu/registerMenu.php" + param;
-                    // alert(menuUrl);
-                    $("#rmxLiFFLayout").load(menuUrl);
-                }
-            }
-        }
-
-
-        if (sFlag == '4') {
-            rmxCloseWindow();
-        }
-
         $(function() {
             var sFlag = "<?php echo $sFlag; ?>";
             if (sFlag != '') {
                 $("#rmxLoader").hide();
+            } else if (sFlag == '4') {
+                rmxCloseWindow();
             }
         });
     </script>
