@@ -56,6 +56,7 @@ if ($status == 'check') {
 
         var sFlag = "<?php echo $sFlag; ?>";
         if (sFlag == '4') {
+            alert('Welcome');
             <?php 
             //rmxChangeRichMenu('MEMBER', $LineId); 
             ?>
