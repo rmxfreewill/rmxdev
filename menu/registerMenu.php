@@ -29,8 +29,8 @@ if ($sFlag == '4') {
 }
 
 ?>
-<div class="mb-3 mt-3 bg-white shadow bg-white rounded">
-    <div class="col-12 text-center">
+<div class="m-4 bg-white shadow bg-white rounded">
+    <div class="col-12 text-center pt-3">
         <h2>Register</h2>
     </div>
     <div class="col-12 p-3">
