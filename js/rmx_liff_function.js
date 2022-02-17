@@ -53,7 +53,7 @@ function registerCheck() {
         } else {
             var toMenu = 'register';
             var toStatus = 'check';
-            var sUrl = "<? echo sURL; ?>";
+            var sUrl = "<?php echo sURL; ?>";
             alert(sUrl);
             var userIdProfile = "<? echo  $getDataFromUrl->LineId; ?>";
             var sCmd = sLineDisplay + "^c" + sUserName + "^c" + sTel + "^c" + sEMail;
