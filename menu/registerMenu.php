@@ -44,10 +44,10 @@ if ($sFlag == '4') {
         </div>
     </div>
     <script>
-        function registerButton() {
+        async function registerButton() {
             var sUrl = "<?php echo sURL; ?>";
             var userIdProfile = "<?php echo  $LineId; ?>";
-            registerCheck(sUrl, userIdProfile);
+            await registerCheck(sUrl, userIdProfile);
         }
 
         $(function() {
