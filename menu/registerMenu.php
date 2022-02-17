@@ -57,17 +57,14 @@ if ($status == 'check') {
         var sFlag = "<?php echo $sFlag; ?>";
         if (sFlag == '4') {
             alert('Welcome');
-            <?php 
+            <?php
             //rmxChangeRichMenu('MEMBER', $LineId); 
             ?>
-            await liff.init({
-                    liffId: myLiffId
-                })
-                .then(() => {
-                    if (liff.getOS() != "web") {
-                        liff.closeWindow();
-                    }
-                });
+
+            if (liff.getOS() != "web") {
+                liff.closeWindow();
+            }
+
         } else {
             if (sFlag != '') {
                 $("#regisForm").removeAttr("hidden");
