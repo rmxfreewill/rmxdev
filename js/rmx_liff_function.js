@@ -39,7 +39,6 @@ function registerCheck(sUrl,userIdProfile) {
     var sUserName = 'rmxadmin';
     var sLineDisplay = 'rmxadmin';
     //
-    var sCompanyCode = "00001";
     var sEMail = document.getElementById('txtEMail').value;
     //
     var sTel = document.getElementById('txtTel').value;
@@ -57,7 +56,7 @@ function registerCheck(sUrl,userIdProfile) {
             var urlSelectMenu = rmxSelectMenu(sUrl, toMenu, userIdProfile, sCmd, toStatus);
             var param = urlSelectMenu.paramS;
             var menuUrl = "menu/registerMenu.php" + param;
-            alert(menuUrl);
+            // alert(menuUrl);
             $("#rmxLiFFLayout").load(menuUrl);
         }
     }
