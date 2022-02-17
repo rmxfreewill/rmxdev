@@ -22,7 +22,6 @@ if ($sFlag == '4') {
     // rmxChangeRichMenu('MEMBER', $LineId);
     echo 'ChangeMenu';
 } else {
-    $registerCheckParam = array(sURL, $LineId);
 ?>
     <div class="m-3 bg-white shadow bg-white rounded">
         <div class="p-4">
@@ -41,7 +40,8 @@ if ($sFlag == '4') {
                 <div class="mb-3">
                     <button class="btn btn-success btn-lg pt-3 pb-3 fw-bold rmxRegisterButton" 
                     type="button" name="btnLogin" id="btnLogin" 
-                    onclick="registerCheck(<?php echo $registerCheckParam; ?>)">
+                    onclick="registerCheck(<?php echo sURL; ?>,<?php echo $LineId; ?>)"
+                    >
                         REGISTER
                     </button>
                 </div>
@@ -50,6 +50,7 @@ if ($sFlag == '4') {
     </div>
     <script>
         $(function() {
+            alert();
             var sFlag = "<?php echo $sFlag; ?>";
             if (sFlag != '') {
                 $("#rmxLoader").hide();
