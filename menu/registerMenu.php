@@ -13,6 +13,7 @@ $regisType = false;
 $getDataFromUrl = getDataFromUrl();
 $status = $getDataFromUrl->status;
 
+echo $status;
 if ($status == 'check') {
     registerDataToDatabase($getDataFromUrl);
 }
