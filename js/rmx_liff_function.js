@@ -35,7 +35,7 @@ function rmxSelectMenu(sUrl = String ,toMenu = String, userId = String,sCmd = St
     return rmxSelectMenu;
 }
 
-function registerCheck(sUrl,userIdProfile) {
+function registerCheckv1(sUrl,userIdProfile) {
     var sUserName = 'rmxadmin';
     var sLineDisplay = 'rmxadmin';
     //
