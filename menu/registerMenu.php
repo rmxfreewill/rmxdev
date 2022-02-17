@@ -50,7 +50,8 @@ if ($sFlag == '4') {
     </div>
     <script>
         $(function() {
-            alert();
+            alert("<?php echo sURL; ?>");
+            alert("<?php echo  $LineId; ?>");
             var sFlag = "<?php echo $sFlag; ?>";
             if (sFlag != '') {
                 $("#rmxLoader").hide();
