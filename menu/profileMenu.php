@@ -4,10 +4,8 @@
 error_reporting(-1);
 ini_set('display_errors', 'On');
 
-include_once("zApiFunction.php");
-include_once("zMenuFunction.php");
-include_once($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
-
+include($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
+include("function/globalMenuFunc.php");
 
 $getDataFromUrl = getDataFromUrl();
 $LineId = $getDataFromUrl->LineId;
@@ -25,6 +23,24 @@ try {
 }
 
 ?>
+
+<div class="m-3 bg-white shadow bg-white rounded" id="regisForm">
+    <div class="p-4">
+        <div class="col-12 text-center">
+            <h2>Profile</h2>
+        </div>
+        <div class="col-12">
+            <div class="mb-2">
+            <label for="psw" class="form-label form-label-lg text-bold">LineID</label>
+            <label for="psw" class="form-label form-label-lg">
+            <?php
+                            echo $LineId;
+                            ?>
+            </label>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="container mt-5">
     <div class="card border-success">
