@@ -30,14 +30,14 @@ try {
             <h2>Profile</h2>
         </div>
         <div class="col-12">
-            <div class="mb-2">
-            <label for="psw" class="form-label form-label-lg text-bold">LineID</label>
-            <label for="psw" class="form-label form-label-lg">
-            <?php
-                            echo $LineId;
-                            ?>
-            </label>
-            </div>
+            <form class="row g-3">
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="inputEmail3">
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
