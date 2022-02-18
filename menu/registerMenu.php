@@ -8,14 +8,24 @@ include("function/globalMenuFunc.php");
 include("function/registerMenuFunc.php");
 
 $sFlag = '';
-$getDataFromUrl = getDataFromUrl();
-$LineId = $getDataFromUrl->LineId;
-$status = $getDataFromUrl->status;
-if ($status == 'check') {
-    registerDataToDatabase($getDataFromUrl);
-} else {
-    $getData = getDataFromDatabase($getDataFromUrl);
-    $sFlag = $getData->sFlag;
+
+try {
+    $getDataFromUrl = getDataFromUrl();
+    $LineId = $getDataFromUrl->LineId;
+    $status = $getDataFromUrl->status;
+    if ($status == 'check') {
+        registerDataToDatabase($getDataFromUrl);
+    } else {
+        $getData = getDataFromDatabase($getDataFromUrl);
+        $sFlag = $getData->sFlag;
+    }
+} catch (\Throwable $th) {
+    echo $th;
+?>
+    <script>
+        $("#regisForm").hide();
+    </script>
+<?php
 }
 
 ?>
