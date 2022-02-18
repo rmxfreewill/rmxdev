@@ -21,11 +21,6 @@ try {
     }
 } catch (\Throwable $th) {
     echo $th;
-?>
-    <script>
-        $("#regisForm").hide();
-    </script>
-<?php
 }
 
 ?>
