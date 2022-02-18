@@ -29,9 +29,10 @@ try {
         <div class="col-12 text-center">
             <h2>Profile</h2>
         </div>
-        <div class="col-12">
-            <div class="row mb-3">
-                <input type="input" class="form-control form-control-sm" id="colFormLabelSm" value="<?php echo $nameText; ?>" readonly>
+        <div class="col-12 m-3">
+            <div class="row g-3">
+                <input type="input" class="form-control form-control-sm" id="nameText" value="<?php echo $nameText; ?>" readonly>
+                <input type="input" class="form-control form-control-sm" id="mobileText" value="<?php echo $mobileText; ?>" readonly>
             </div>
         </div>
     </div>
