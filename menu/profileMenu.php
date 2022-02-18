@@ -30,8 +30,10 @@ try {
             <h2>Profile</h2>
         </div>
         <div class="col-12 m-3">
-            <div class="row g-3">
+            <div class="row g-5">
+                <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Name</label>
                 <input type="input" class="form-control form-control-sm" id="nameText" value="<?php echo $nameText; ?>" readonly>
+                <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Mobile</label>
                 <input type="input" class="form-control form-control-sm" id="mobileText" value="<?php echo $mobileText; ?>" readonly>
             </div>
         </div>
