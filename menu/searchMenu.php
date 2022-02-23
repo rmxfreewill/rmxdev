@@ -116,11 +116,6 @@ if ($sFlag != '0') {
 ?>
 
 <script>
-    alert('Search');
-    $(function() {
-        var status = "<? echo $status; ?>";
-        status == 'check' ?? alert('<? echo json_encode($getDataFromUrl); ?>');
-    });
 
     function checkSearch() {
         var toMenu = 'search';
@@ -158,6 +153,7 @@ if ($sFlag != '0') {
     }
 
     $(function() {
+        var sFlag = "<?php echo $sFlag; ?>";
         if (sFlag != '') {
             $("#rmxLoader").hide();
         }
