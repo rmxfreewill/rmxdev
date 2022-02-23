@@ -90,6 +90,22 @@ function ticketSearchScreen()
     echo $res;
 }
 
+function ticketSearchForm()
+{
+    echo '
+    <div class="m-3 bg-white shadow bg-white rounded" id="regisForm">
+    <div class="p-4">
+        <div class="col-12 text-center">
+            <h2>Register</h2>
+        </div>
+        <div class="col-12">
+        fff
+        </div>
+    </div>
+    </div>
+';
+}
+
 try {
     $getDataFromUrl = getDataFromUrl();
     $status = $getDataFromUrl->status;
@@ -109,14 +125,13 @@ if ($status == 'check') {
 }
 
 if ($sFlag != '0') {
-    ticketSearchScreen();
+    ticketSearchForm();
 } else {
     echo $notFound;
 }
 ?>
 
 <script>
-
     function checkSearch() {
         var toMenu = 'search';
         var toStatus = 'check';
