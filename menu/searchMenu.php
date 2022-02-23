@@ -133,7 +133,9 @@ try {
 
 if ($status == 'check') {
     // $RetCommand =send_query($CompanyUrl,$LineId,$CompanyCode,$CmdCommand);  
-    // $sFlag = $getData->sFlag;
+    $getData = getDataFromDatabase($getDataFromUrl);
+    $sFlag = $getData->sFlag;
+
 } else if ($status == 'init') {
     $notFound =  "<center><h2><br>Not Found User</h2></center>";
     $getData = getDataFromDatabase($getDataFromUrl);
@@ -148,7 +150,7 @@ if ($sFlag != '0') {
     echo $notFound;
 }
 ?>
-
+<div id="searchLists"></div>
 <script>
     function checkSearch() {
         var toMenu = 'search';
@@ -182,9 +184,13 @@ if ($sFlag != '0') {
             var urlSelectMenu = rmxSelectMenu(sUrl, toMenu, sLineId, sCmd, toStatus);
             var param = urlSelectMenu.paramS;
             var menuUrl = "menu/searchMenu.php" + param + paramTableTitle;
-            alert(menuUrl);
+            // alert(menuUrl);
             $("#rmxLiFFLayout").load(menuUrl);
         }
+
+    }
+
+    function getSearchLists(){
 
     }
 
