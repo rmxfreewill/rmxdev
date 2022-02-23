@@ -148,7 +148,8 @@ if ($status == 'check') {
 if ($sFlag != '0') {
     ticketSearchForm();
 } else {
-    echo json_encode($RetCommand);
+    // echo json_encode($RetCommand);
+    echo 'check';
 }
 ?>
 <div id="searchLists"></div>
