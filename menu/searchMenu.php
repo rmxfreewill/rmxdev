@@ -92,18 +92,36 @@ function ticketSearchScreen()
 
 function ticketSearchForm()
 {
-    echo '
-    <div class="m-3 bg-white shadow bg-white rounded" id="regisForm">
-    <div class="p-4">
-        <div class="col-12 text-center">
-            <h2>Register</h2>
-        </div>
-        <div class="col-12">
-        fff
+    $res = '
+    <div class="m-3 bg-white shadow bg-white rounded" id="searchForm">
+        <div class="p-4">
+            <div class="col-12 text-center">
+                <h2>Register</h2>
+            </div>
+            <div class="col-12 mb-3">
+                <div class="mb-3">
+                    <label for="txtFirst" class="form-label form-label-lg"><b>Start Date</b></label>
+                    <input type="date" class="form-control form-control-lg" dateformat="d M y" id="txtFirst">
+                </div>
+                <div class="mb-3">
+                    <label for="txtLast" class="form-label form-label-lg"><b>End Date</b></label>
+                    <input type="date" class="form-control form-control-lg" id="txtLast" dateformat="d M y">
+                </div>
+                <div class="mb-4" hidden>
+                    <label for="txtTicketNo" class="form-label form-label-lg"><b>Ticket No</b></label>
+                    <input type="text" class="form-control form-control-lg p-3" id="txtTicketNo" value="">
+                </div>
+                <div class="mb-3 mt-2">
+                    <button class="btn btn-success btn-lg rmxRegisterButton pt-3 pb-3" type="button" id="btnSearch" onclick="checkSearch()">
+                        SEARCH
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
-    </div>
-';
+    ';
+
+    echo $res;
 }
 
 try {
