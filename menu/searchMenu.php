@@ -96,7 +96,7 @@ function ticketSearchForm()
     <div class="m-3 bg-white shadow bg-white rounded" id="searchForm">
         <div class="p-4">
             <div class="col-12 text-center">
-                <h2>Register</h2>
+                <h2>SEARCH</h2>
             </div>
             <div class="col-12 mb-3">
                 <div class="mb-3">
