@@ -170,19 +170,22 @@ if ($sFlag != '0') {
             return;
         }
 
-        var dF = new Date(sFirst);
-        sFirst = dF.getDate() + '/' + (dF.getMonth() + 1) + '/' + dF.getFullYear();
-        var dL = new Date(sLast);
-        sLast = dL.getDate() + '/' + (dL.getMonth() + 1) + '/' + dL.getFullYear();
-        var sTableTitle = "Date " + sFirst + " to " + sLast;
-        var paramTableTitle = "&TableTitle=" + sTableTitle;
+        if (sFirst != "" && sLast != "") {
+            var dF = new Date(sFirst);
+            sFirst = dF.getDate() + '/' + (dF.getMonth() + 1) + '/' + dF.getFullYear();
+            var dL = new Date(sLast);
+            sLast = dL.getDate() + '/' + (dL.getMonth() + 1) + '/' + dL.getFullYear();
+            var sTableTitle = "Date " + sFirst + " to " + sLast;
+            var paramTableTitle = "&TableTitle=" + sTableTitle;
 
-        var sCmd = "call sp_comp_select_ticket('" + sLineId + "','" + sFirst + "','" + sLast + "')";
-        var urlSelectMenu = rmxSelectMenu(sUrl, toMenu, sLineId, sCmd, toStatus);
-        var param = urlSelectMenu.paramS;
-        var menuUrl = "menu/searchMenu.php" + param + paramTableTitle;
-        // alert(menuUrl);
-        $("#rmxLiFFLayout").load(menuUrl);
+            var sCmd = "call sp_comp_select_ticket('" + sLineId + "','" + sFirst + "','" + sLast + "')";
+            var urlSelectMenu = rmxSelectMenu(sUrl, toMenu, sLineId, sCmd, toStatus);
+            var param = urlSelectMenu.paramS;
+            var menuUrl = "menu/searchMenu.php" + param + paramTableTitle;
+            alert(menuUrl);
+            $("#rmxLiFFLayout").load(menuUrl);
+        }
+
     }
 
     $(function() {
