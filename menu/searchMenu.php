@@ -124,20 +124,14 @@ function ticketSearchForm()
     echo $res;
 }
 
-try {
-    $getDataFromUrl = getDataFromUrl();
-    $status = $getDataFromUrl->status;
-    $LineId = $getDataFromUrl->LineId;
-    $CmdCommand = $getDataFromUrl->CmdCommand;
-} catch (\Throwable $th) {
-    echo $th;
-}
-
+$getDataFromUrl = getDataFromUrl();
+$CmdCommand = $getDataFromUrl->CmdCommand;
+$LineId = $getDataFromUrl->LineId;
+$status = $getDataFromUrl->status;
 if ($status == 'check') {
-    $RetCommand = sendQuery('QueryCommand',COMPANY_URL,$LineId,COMPANY_CODE,$CmdCommand);
+    $RetCommand = sendQuery('QueryCommand', COMPANY_URL, $LineId, COMPANY_CODE, $CmdCommand);
     // $getData = getDataFromDatabase($getDataFromUrl);
     // $sFlag = $getData->sFlag;
-  
 } else if ($status == 'init') {
     $getData = getDataFromDatabase($getDataFromUrl);
     $sFlag = $getData->sFlag;
@@ -149,7 +143,7 @@ if ($sFlag != '0') {
     ticketSearchForm();
 } else {
     // echo json_encode($RetCommand);
-    echo 'check';
+    echo $status;
 }
 ?>
 <div id="searchLists"></div>
