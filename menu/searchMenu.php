@@ -127,17 +127,18 @@ function ticketSearchForm()
 try {
     $getDataFromUrl = getDataFromUrl();
     $status = $getDataFromUrl->status;
+    $LineId = $getDataFromUrl->LineId;
+    $CmdCommand = $getDataFromUrl->CmdCommand;
 } catch (\Throwable $th) {
     echo $th;
 }
 
 if ($status == 'check') {
-    // $RetCommand =send_query($CompanyUrl,$LineId,$CompanyCode,$CmdCommand);  
-    $getData = getDataFromDatabase($getDataFromUrl);
-    $sFlag = $getData->sFlag;
-
+    $RetCommand = sendQuery('QueryCommand',COMPANY_URL,$LineId,COMPANY_CODE,$CmdCommand);
+    // $getData = getDataFromDatabase($getDataFromUrl);
+    // $sFlag = $getData->sFlag;
+  
 } else if ($status == 'init') {
-    $notFound =  "<center><h2><br>Not Found User</h2></center>";
     $getData = getDataFromDatabase($getDataFromUrl);
     $sFlag = $getData->sFlag;
     $LineId = $getData->LineId;
@@ -147,7 +148,7 @@ if ($status == 'check') {
 if ($sFlag != '0') {
     ticketSearchForm();
 } else {
-    echo $notFound;
+    echo json_encode($RetCommand);
 }
 ?>
 <div id="searchLists"></div>
@@ -190,7 +191,7 @@ if ($sFlag != '0') {
 
     }
 
-    function getSearchLists(){
+    function getSearchLists() {
 
     }
 
