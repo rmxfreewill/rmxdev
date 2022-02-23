@@ -3,14 +3,17 @@
 error_reporting(-1);
 ini_set('display_errors', 'On');
 
-include("zMenuFunction.php");
-include("zApiFunction.php");
+// include("zMenuFunction.php");
+// include("zApiFunction.php");
 
-$GLOBALS['COMPANY_URL'] =  COMPANY_URL;
-$GLOBALS['REGISTER_URL'] =   REGISTER_URL;
-$GLOBALS['COMPANY_CODE'] =   COMPANY_CODE;
-$GLOBALS['LIFF_ID'] =   LIFF_ID;
-$GLOBALS['sURL'] =   sURL;
+// $GLOBALS['COMPANY_URL'] =  COMPANY_URL;
+// $GLOBALS['REGISTER_URL'] =   REGISTER_URL;
+// $GLOBALS['COMPANY_CODE'] =   COMPANY_CODE;
+// $GLOBALS['LIFF_ID'] =   LIFF_ID;
+// $GLOBALS['sURL'] =   sURL;
+
+include($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
+include("function/globalMenuFunc.php");
 
 $TableTitle = 'View Ticket';
 if (isset($_POST['TableTitle']))
@@ -89,8 +92,7 @@ function ticketSearchScreen()
     echo $res;
 }
 
-
-$getDataFromUrl = getDataFromUrl($GLOBALS['COMPANY_CODE'], $GLOBALS['COMPANY_URL'], $GLOBALS['REGISTER_URL']);
+$getDataFromUrl = getDataFromUrl();
 $status = $getDataFromUrl->status;
 if ($status == 'check') {
 
