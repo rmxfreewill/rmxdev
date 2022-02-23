@@ -3,16 +3,8 @@
 error_reporting(-1);
 ini_set('display_errors', 'On');
 
-// include("zMenuFunction.php");
-// include("zApiFunction.php");
-
-// $GLOBALS['COMPANY_URL'] =  COMPANY_URL;
-// $GLOBALS['REGISTER_URL'] =   REGISTER_URL;
-// $GLOBALS['COMPANY_CODE'] =   COMPANY_CODE;
-// $GLOBALS['LIFF_ID'] =   LIFF_ID;
-// $GLOBALS['sURL'] =   sURL;
-
 include($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
+include($_SERVER['DOCUMENT_ROOT'] . "/zApiFunction.php");
 include("function/globalMenuFunc.php");
 
 $sFlag = '';
