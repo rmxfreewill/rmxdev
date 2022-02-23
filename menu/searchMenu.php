@@ -120,6 +120,8 @@ $CmdCommand = $getDataFromUrl->CmdCommand;
 $LineId = $getDataFromUrl->LineId;
 $status = $getDataFromUrl->status;
 
+echo json_encode($getDataFromUrl);
+
 if ($status == 'check') {
     // $RetCommand = sendQuery('QueryCommand', COMPANY_URL, $LineId, COMPANY_CODE, $CmdCommand);
     // $getData = getDataFromDatabase($getDataFromUrl);
@@ -173,8 +175,8 @@ if ($sFlag != '0') {
             var param = urlSelectMenu.paramS;
             var menuUrl = "menu/searchMenu.php" + param + paramTableTitle;
             // alert(menuUrl);
-            // $("#rmxLiFFLayout").load(menuUrl);
-            $("#searchForm").hide();
+            $("#rmxLiFFLayout").load(menuUrl);
+            // $("#searchForm").hide();
         }
 
     }
