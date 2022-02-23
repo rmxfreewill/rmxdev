@@ -174,7 +174,7 @@ if ($sFlag != '0') {
             var menuUrl = "menu/searchMenu.php" + param + paramTableTitle;
             // alert(menuUrl);
             // $("#rmxLiFFLayout").load(menuUrl);
-            $("#searchLists").load("aa.txt");
+            $("#searchForm").hide();
         }
 
     }
