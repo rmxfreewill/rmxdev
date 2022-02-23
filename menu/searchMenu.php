@@ -15,23 +15,24 @@ ini_set('display_errors', 'On');
 include($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
 include("function/globalMenuFunc.php");
 
+$sFlag = '';
+
 $TableTitle = 'View Ticket';
 if (isset($_POST['TableTitle']))
     $TableTitle = $_POST['TableTitle'];
 if (isset($_GET['TableTitle']))
     $TableTitle = $_GET['TableTitle'];
 
-$RetCommand = '';
-$Ret = '';
-
-$UserName = '';
-$EMail = '';
-$Tel = '';
-$SoldToCode = '';
-$SoldToName = '';
-$sFlagMsg = '';
-$sFlag = '5';
-$sShowMsg = '';
+// $RetCommand = '';
+// $Ret = '';
+// $UserName = '';
+// $EMail = '';
+// $Tel = '';
+// $SoldToCode = '';
+// $SoldToName = '';
+// $sFlagMsg = '';
+// $sFlag = '5';
+// $sShowMsg = '';
 
 function ticketSearchScreen()
 {
@@ -86,18 +87,18 @@ function ticketSearchScreen()
     </div>
     ';
 
-
-
-
     echo $res;
 }
 
-$getDataFromUrl = getDataFromUrl();
-$status = $getDataFromUrl->status;
+try {
+    $getDataFromUrl = getDataFromUrl();
+    $status = $getDataFromUrl->status;
+} catch (\Throwable $th) {
+    echo $th;
+}
+
 if ($status == 'check') {
-
     // $RetCommand =send_query($CompanyUrl,$LineId,$CompanyCode,$CmdCommand);  
-
     // $sFlag = $getData->sFlag;
 } else if ($status == 'init') {
     $notFound =  "<center><h2><br>Not Found User</h2></center>";
@@ -155,4 +156,10 @@ if ($sFlag != '0') {
         // alert(menuUrl);
         $("#rmxLiFFLayout").load(menuUrl);
     }
+
+    $(function() {
+        if (sFlag != '') {
+            $("#rmxLoader").hide();
+        }
+    });
 </script>
