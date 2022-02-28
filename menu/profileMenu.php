@@ -35,14 +35,14 @@ try {
         </div>
         <div class="col-12 m-3">
             <div class="row">
-                <label  class="col-sm-2 col-form-label col-form-label-sm">Name</label>
+                <label  class="col-sm-2 col-form-label col-form-label-lg">Name</label>
                 <input type="input" class="form-control form-control-lg" id="nameText" value="<?php echo $nameText; ?>" readonly>
-                <label  class="col-sm-2 col-form-label col-form-label-sm">Mobile</label>
+                <label  class="col-sm-2 col-form-label col-form-label-lg">Mobile</label>
                 <input type="input" class="form-control form-control-lg" id="mobileText" value="<?php echo $mobileText; ?>" readonly>
-                <label  class="col-sm-2 col-form-label col-form-label-sm">SoldToName</label>
-                <input type="input" class="form-control form-control-lg" id="mobileText" value="<?php echo $soldToNameText; ?>" readonly>
+                <label  class="col-sm-2 col-form-label col-form-label-lg">SoldToName</label>
+                <input type="input" class="form-control form-control-lg" id="soldToNameText" value="<?php echo $soldToNameText; ?>" readonly>
                 <label  class="col-sm-2 col-form-label col-form-label-sm">ShipToName</label>
-                <input type="input" class="form-control form-control-lg" id="mobileText" value="<?php echo $shipToNameText; ?>" readonly>
+                <input type="input" class="form-control form-control-lg" id="shipToNameText" value="<?php echo $shipToNameText; ?>" readonly>
             </div>
         </div>
     </div>
