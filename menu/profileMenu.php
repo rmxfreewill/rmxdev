@@ -40,15 +40,15 @@ try {
         <div class="col-12 m-3">
             <div class="row">
                 <label class="col-sm-2 col-form-label col-form-label-lg">Name</label>
-                <input type="input" class="form-control form-control-lg" id="nameText" value="<?php echo $nameText; ?>" readonly>
+                <input type="input" class="form-control form-control-lg" id="nameText" value="<?php echo $nameText; ?>" disabled>
                 <label class="col-sm-2 col-form-label col-form-label-lg">Mobile</label>
-                <input type="input" class="form-control form-control-lg" id="mobileText" value="<?php echo $mobileText; ?>" readonly>
+                <input type="input" class="form-control form-control-lg" id="mobileText" value="<?php echo $mobileText; ?>" disabled>
                 <label class="col-sm-2 col-form-label col-form-label-lg">Email</label>
-                <input type="input" class="form-control form-control-lg" id="emailText" value="<?php echo $emailText; ?>" readonly>
+                <input type="input" class="form-control form-control-lg" id="emailText" value="<?php echo $emailText; ?>" disabled>
                 <label class="col-sm-2 col-form-label col-form-label-lg">SoldToName</label>
-                <input type="input" class="form-control form-control-lg" id="soldToNameText" value="<?php echo $soldToNameText; ?>" readonly>
+                <input type="input" class="form-control form-control-lg" id="soldToNameText" value="<?php echo $soldToNameText; ?>" disabled>
                 <label class="col-sm-2 col-form-label col-form-label-lg">ShipToName</label>
-                <input type="input" class="form-control form-control-lg" id="shipToNameText" value="<?php echo $shipToNameText; ?>" readonly>
+                <input type="input" class="form-control form-control-lg" id="shipToNameText" value="<?php echo $shipToNameText; ?>" disabled>
             </div>
         </div>
     </div>
