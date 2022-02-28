@@ -48,7 +48,7 @@ try {
                 <label class="col-sm-2 col-form-label col-form-label-lg">SoldToName</label>
                 <input type="input" class="form-control form-control-lg" id="soldToNameText" value="<?php echo $soldToNameText; ?>" disabled>
                 <label class="col-sm-2 col-form-label col-form-label-lg">ShipToName</label>
-                <input type="input" class="form-control form-control-lg" id="shipToNameText" value="<?php echo $shipToNameText; ?>" disabled>
+                <input type="input" class="form-control form-control-lg  bg-light" id="shipToNameText" value="<?php echo $shipToNameText; ?>" disabled>
             </div>
         </div>
     </div>
