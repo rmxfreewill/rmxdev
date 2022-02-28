@@ -43,6 +43,8 @@ try {
                 <input type="input" class="form-control form-control-lg" id="nameText" value="<?php echo $nameText; ?>" readonly>
                 <label class="col-sm-2 col-form-label col-form-label-lg">Mobile</label>
                 <input type="input" class="form-control form-control-lg" id="mobileText" value="<?php echo $mobileText; ?>" readonly>
+                <label class="col-sm-2 col-form-label col-form-label-lg">Email</label>
+                <input type="input" class="form-control form-control-lg" id="emailText" value="<?php echo $emailText; ?>" readonly>
                 <label class="col-sm-2 col-form-label col-form-label-lg">SoldToName</label>
                 <input type="input" class="form-control form-control-lg" id="soldToNameText" value="<?php echo $soldToNameText; ?>" readonly>
                 <label class="col-sm-2 col-form-label col-form-label-lg">ShipToName</label>
