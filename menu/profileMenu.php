@@ -18,6 +18,10 @@ try {
     $emailText = $getData->EMail;
     $soldToNameText = $getData->SoldToName;
     $shipToNameText = $getData->ShipToName;
+
+    if ($nameText == '') {
+        $nameText = '-';
+    }
 } catch (\Throwable $th) {
     $nameText = '';
     $mobileText = '';
@@ -36,7 +40,7 @@ try {
         <div class="col-12 m-3">
             <div class="row">
                 <label class="col-sm-2 col-form-label col-form-label-lg">Name</label>
-                <input type="input" class="form-control form-control-lg" id="nameText" value="<?php echo $nameText == '' ?? '-'; ?>" readonly>
+                <input type="input" class="form-control form-control-lg" id="nameText" value="<?php echo $nameText; ?>" readonly>
                 <label class="col-sm-2 col-form-label col-form-label-lg">Mobile</label>
                 <input type="input" class="form-control form-control-lg" id="mobileText" value="<?php echo $mobileText; ?>" readonly>
                 <label class="col-sm-2 col-form-label col-form-label-lg">SoldToName</label>
