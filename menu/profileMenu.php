@@ -48,7 +48,7 @@ try {
     </div>
 </div>
 
-<div class="container mt-5">
+<div class="container mt-5 hidden">
     <div class="card border-success">
         <div class="card text-white">
             <h4 class="card-header bg-success text-uppercase font-weight-bold">user profile</h4>
