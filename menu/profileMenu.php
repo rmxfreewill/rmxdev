@@ -33,16 +33,16 @@ try {
         <div class="col-12 text-center">
             <h2>Profile</h2>
         </div>
-        <div class="col-12 m-3 text-lg">
+        <div class="col-12 m-3">
             <div class="row">
-                <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Name</label>
-                <input type="input" class="form-control form-control-sm" id="nameText" value="<?php echo $nameText; ?>" readonly>
-                <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Mobile</label>
-                <input type="input" class="form-control form-control-sm" id="mobileText" value="<?php echo $mobileText; ?>" readonly>
-                <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">SoldToName</label>
-                <input type="input" class="form-control form-control-sm" id="mobileText" value="<?php echo $soldToNameText; ?>" readonly>
-                <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">ShipToName</label>
-                <input type="input" class="form-control form-control-sm" id="mobileText" value="<?php echo $shipToNameText; ?>" readonly>
+                <label  class="col-sm-2 col-form-label col-form-label-sm">Name</label>
+                <input type="input" class="form-control form-control-lg" id="nameText" value="<?php echo $nameText; ?>" readonly>
+                <label  class="col-sm-2 col-form-label col-form-label-sm">Mobile</label>
+                <input type="input" class="form-control form-control-lg" id="mobileText" value="<?php echo $mobileText; ?>" readonly>
+                <label  class="col-sm-2 col-form-label col-form-label-sm">SoldToName</label>
+                <input type="input" class="form-control form-control-lg" id="mobileText" value="<?php echo $soldToNameText; ?>" readonly>
+                <label  class="col-sm-2 col-form-label col-form-label-sm">ShipToName</label>
+                <input type="input" class="form-control form-control-lg" id="mobileText" value="<?php echo $shipToNameText; ?>" readonly>
             </div>
         </div>
     </div>
