@@ -18,6 +18,8 @@ try {
     $emailText = $getData->EMail;
     $soldToNameText = $getData->SoldToName;
     $shipToNameText = $getData->ShipToName;
+    $soldToCodeText = $getData->SoldToCode;
+    $shipToCodeText = $getData->ShipToCode;
 
     if ($nameText == '') {
         $nameText = '-';
@@ -28,6 +30,8 @@ try {
     $emailText = '';
     $soldToNameText = '';
     $shipToNameText = '';
+    $soldToCodeText = '';
+    $shipToCodeText = '';
 }
 
 ?>
@@ -47,10 +51,14 @@ try {
                 <input type="input" class="form-control form-control-lg" id="mobileText" value="<?php echo $mobileText; ?>" disabled>
                 <label class="col-sm-2 col-form-label col-form-label-lg">Email</label>
                 <input type="input" class="form-control form-control-lg" id="emailText" value="<?php echo $emailText; ?>" disabled>
-                <label class="col-sm-2 col-form-label col-form-label-lg">SoldToName</label>
+                <label class="col-sm-2 col-form-label col-form-label-lg text-grey">SoldToName</label>
                 <input type="input" class="form-control form-control-lg" id="soldToNameText" value="<?php echo $soldToNameText; ?>" disabled>
-                <label class="col-sm-2 col-form-label col-form-label-lg">ShipToName</label>
+                <label class="col-sm-2 col-form-label col-form-label-lg  text-grey">ShipToName</label>
                 <input type="input" class="form-control form-control-lg  bg-light" id="shipToNameText" value="<?php echo $shipToNameText; ?>" disabled>
+                <label class="col-sm-2 col-form-label col-form-label-lg text-grey">SoldToCode</label>
+                <input type="input" class="form-control form-control-lg" id="soldToCodeText" value="<?php echo $soldToCodeText; ?>" disabled>
+                <label class="col-sm-2 col-form-label col-form-label-lg  text-grey">ShipToCode</label>
+                <input type="input" class="form-control form-control-lg  bg-light" id="shipToCodeText" value="<?php echo $shipToCodeText; ?>" disabled>
             </div>
         </div>
     </div>
