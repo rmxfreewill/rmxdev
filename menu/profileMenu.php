@@ -43,22 +43,22 @@ try {
         </div>
         <div class="col-12 m-3">
             <div class="row">
-            <label class="col-sm-2 col-form-label col-form-label-lg">LineId</label>
+                <label class="col-sm-2 col-form-label col-form-label-lg text-secondary">LineId</label>
                 <input type="input" class="form-control form-control-lg" id="LineIdText" value="<?php echo $LineId; ?>" disabled>
-                <label class="col-sm-2 col-form-label col-form-label-lg">Name</label>
+                <label class="col-sm-2 col-form-label col-form-label-lg text-secondary">Name</label>
                 <input type="input" class="form-control form-control-lg" id="nameText" value="<?php echo $nameText; ?>" disabled>
-                <label class="col-sm-2 col-form-label col-form-label-lg">Mobile</label>
+                <label class="col-sm-2 col-form-label col-form-label-lg text-secondary">Mobile</label>
                 <input type="input" class="form-control form-control-lg" id="mobileText" value="<?php echo $mobileText; ?>" disabled>
-                <label class="col-sm-2 col-form-label col-form-label-lg">Email</label>
+                <label class="col-sm-2 col-form-label col-form-label-lg text-secondary">Email</label>
                 <input type="input" class="form-control form-control-lg" id="emailText" value="<?php echo $emailText; ?>" disabled>
-                <label class="col-sm-2 col-form-label col-form-label-lg text-grey">SoldToName</label>
+                <label class="col-sm-2 col-form-label col-form-label-lg text-secondary">SoldToName</label>
                 <input type="input" class="form-control form-control-lg" id="soldToNameText" value="<?php echo $soldToNameText; ?>" disabled>
-                <label class="col-sm-2 col-form-label col-form-label-lg  text-grey">ShipToName</label>
-                <input type="input" class="form-control form-control-lg  bg-light" id="shipToNameText" value="<?php echo $shipToNameText; ?>" disabled>
-                <label class="col-sm-2 col-form-label col-form-label-lg text-grey">SoldToCode</label>
+                <label class="col-sm-2 col-form-label col-form-label-lg  text-secondary">ShipToName</label>
+                <input type="input" class="form-control form-control-lg" id="shipToNameText" value="<?php echo $shipToNameText; ?>" disabled>
+                <label class="col-sm-2 col-form-label col-form-label-lg text-secondary">SoldToCode</label>
                 <input type="input" class="form-control form-control-lg" id="soldToCodeText" value="<?php echo $soldToCodeText; ?>" disabled>
-                <label class="col-sm-2 col-form-label col-form-label-lg  text-grey">ShipToCode</label>
-                <input type="input" class="form-control form-control-lg  bg-light" id="shipToCodeText" value="<?php echo $shipToCodeText; ?>" disabled>
+                <label class="col-sm-2 col-form-label col-form-label-lg  text-secondaryy">ShipToCode</label>
+                <input type="input" class="form-control form-control-lg " id="shipToCodeText" value="<?php echo $shipToCodeText; ?>" disabled>
             </div>
         </div>
     </div>
