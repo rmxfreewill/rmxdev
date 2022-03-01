@@ -39,6 +39,8 @@ try {
         </div>
         <div class="col-12 m-3">
             <div class="row">
+            <label class="col-sm-2 col-form-label col-form-label-lg">LineId</label>
+                <input type="input" class="form-control form-control-lg" id="LineIdText" value="<?php echo $LineId; ?>" disabled>
                 <label class="col-sm-2 col-form-label col-form-label-lg">Name</label>
                 <input type="input" class="form-control form-control-lg" id="nameText" value="<?php echo $nameText; ?>" disabled>
                 <label class="col-sm-2 col-form-label col-form-label-lg">Mobile</label>
