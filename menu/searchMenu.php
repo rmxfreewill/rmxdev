@@ -139,6 +139,39 @@ if ($sFlag != '0') {
 ?>
 <div id="searchLists"></div>
 <script>
+    function searchParamv1() {
+        var dF = new Date(sFirst);
+        sFirst = dF.getDate() + '/' + (dF.getMonth() + 1) + '/' + dF.getFullYear();
+        var dL = new Date(sLast);
+        sLast = dL.getDate() + '/' + (dL.getMonth() + 1) + '/' + dL.getFullYear();
+        var sTableTitle = "Date " + sFirst + " to " + sLast;
+        var paramTableTitle = "&TableTitle=" + sTableTitle;
+
+        var sCmd = "call sp_comp_select_ticket('" + sLineId + "','" + sFirst + "','" + sLast + "')";
+        var urlSelectMenu = rmxSelectMenu(sUrl, toMenu, sLineId, sCmd, toStatus);
+        var param = urlSelectMenu.paramS;
+    }
+
+    function searchParamv2(sLineId, sFirst, sLast) {
+        var sCmd = "call sp_comp_select_ticket('" + sLineId + "','" + sFirst + "','" + sLast + "','')";
+        var sTableTitle = "Date " + sFirst + " to " + sLast;
+
+        var sSHCode = document.getElementById('txtShipToCode').value;
+        var sSHName = document.getElementById('txtShipToName').value;
+
+
+        sSDate = dF.getFullYear() + '-' + (dF.getMonth()) + '-' + dF.getDate();
+        sEDate = dL.getFullYear() + '-' + (dL.getMonth()) + '-' + dL.getDate();
+
+        var LineLiffUrl = document.getElementById('txtLiffUrl').value;
+        var para = "?LinkCode=QUERY&LineId=" + sLineId + "&CmdCommand=" + sCmd +
+            "&TableTitle=" + sTableTitle +
+            "&SHCode=" + sSHCode + "&SHName=" + sSHName +
+            "&SDate=" + sSDate + "&EDate=" + sEDate;
+
+        return para;
+    }
+
     function checkSearch() {
         var toMenu = 'search';
         var toStatus = 'check';
@@ -164,14 +197,9 @@ if ($sFlag != '0') {
             sFirst = dF.getDate() + '/' + (dF.getMonth() + 1) + '/' + dF.getFullYear();
             var dL = new Date(sLast);
             sLast = dL.getDate() + '/' + (dL.getMonth() + 1) + '/' + dL.getFullYear();
-            var sTableTitle = "Date " + sFirst + " to " + sLast;
-            var paramTableTitle = "&TableTitle=" + sTableTitle;
-
-            var sCmd = "call sp_comp_select_ticket('" + sLineId + "','" + sFirst + "','" + sLast + "')";
-            var urlSelectMenu = rmxSelectMenu(sUrl, toMenu, sLineId, sCmd, toStatus);
-            var param = urlSelectMenu.paramS;
-            var menuUrl = "menu/searchMenu.php" + param + paramTableTitle;
-            // alert(menuUrl);
+            var param = searchParamv2(sLineId, sFirst, sLast);
+            var menuUrl = "menu/searchMenu.php" + param;
+            alert(menuUrl);
             $("#rmxLiFFLayout").load(menuUrl);
             // $("#searchForm").hide();
         }
