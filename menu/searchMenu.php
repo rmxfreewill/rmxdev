@@ -148,10 +148,12 @@ if ($sFlag != '0') {
         sLast = dL.getDate() + '/' + (dL.getMonth() + 1) + '/' + dL.getFullYear();
         var sTableTitle = "Date " + sFirst + " to " + sLast;
         var paramTableTitle = "&TableTitle=" + sTableTitle;
+        alert(paramTableTitle);
 
         var sSDate = dF.getFullYear() + '-' + (dF.getMonth()) + '-' + dF.getDate();
         var sEDate = dL.getFullYear() + '-' + (dL.getMonth()) + '-' + dL.getDate();
         var paramDateTo = +"&SDate=" + sSDate + "&EDate=" + sEDate;
+        alert(paramDateTo);
 
         var sSHCode = "<?php echo $shipToCode; ?>";
         var sSHName = "<?php echo $shipToName; ?>";
@@ -159,9 +161,11 @@ if ($sFlag != '0') {
 
         var sCmd = "call sp_comp_select_ticket('" + sLineId + "','" + sFirst + "','" + sLast + "')";
         var urlSelectMenu = rmxSelectMenu(sUrl, toMenu, sLineId, sCmd, toStatus);
+        alert(urlSelectMenu);
 
         var returnParam = urlSelectMenu.paramS + paramTableTitle + paramshipTo + paramDateTo;
-        alertt(returnParam);
+        alert(returnParam);
+        
         return returnParam;
     }
 
