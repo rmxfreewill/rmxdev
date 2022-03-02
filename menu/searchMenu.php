@@ -207,8 +207,8 @@ if ($sFlag != '0') {
         if (sFirst != "" && sLast != "") {
             var param = searchParam();
             var menuUrl = "menu/searchMenu.php" + param;
-            alert(menuUrl);
-            // $("#rmxLiFFLayout").load(menuUrl);
+            // alert(menuUrl);
+            $("#rmxLiFFLayout").load(menuUrl);
             // $("#searchForm").hide();
         }
 
