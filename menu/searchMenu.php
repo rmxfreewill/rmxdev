@@ -127,6 +127,8 @@ if ($status == 'check') {
     $getData = getDataFromDatabase($getDataFromUrl);
     $sFlag = $getData->sFlag;
     $LineId = $getData->LineId;
+    $ShipToCode = $getData->ShipToCode;
+    $ShipToName = $getData->ShipToName;
     $RetCommand = $getData->RetCommand;
 }
 
@@ -139,7 +141,7 @@ if ($sFlag != '0') {
 ?>
 <div id="searchLists"></div>
 <script>
-    function searchParamv1() {
+    function searchParam() {
         var dF = new Date(sFirst);
         sFirst = dF.getDate() + '/' + (dF.getMonth() + 1) + '/' + dF.getFullYear();
         var dL = new Date(sLast);
@@ -147,30 +149,40 @@ if ($sFlag != '0') {
         var sTableTitle = "Date " + sFirst + " to " + sLast;
         var paramTableTitle = "&TableTitle=" + sTableTitle;
 
+        var sSDate = dF.getFullYear() + '-' + (dF.getMonth()) + '-' + dF.getDate();
+        var sEDate = dL.getFullYear() + '-' + (dL.getMonth()) + '-' + dL.getDate();
+        var paramDateTo = +"&SDate=" + sSDate + "&EDate=" + sEDate;
+
+        var sSHCode = "<?php echo $shipToCode; ?>";
+        var sSHName = "<?php echo $shipToName; ?>";
+        var paramshipTo = "&SHCode=" + sSHCode + "&SHName=" + sSHName;
+
         var sCmd = "call sp_comp_select_ticket('" + sLineId + "','" + sFirst + "','" + sLast + "')";
         var urlSelectMenu = rmxSelectMenu(sUrl, toMenu, sLineId, sCmd, toStatus);
-        var param = urlSelectMenu.paramS;
+
+        var returnParam = urlSelectMenu.paramS + paramTableTitle + paramshipTo + paramDateTo;
+        alertt(returnParam);
+        return returnParam;
     }
 
-    function searchParamv2(sLineId, sFirst, sLast) {
-        var sCmd = "call sp_comp_select_ticket('" + sLineId + "','" + sFirst + "','" + sLast + "','')";
-        var sTableTitle = "Date " + sFirst + " to " + sLast;
+    // function searchParamv2(sLineId, sFirst, sLast) {
+    //     var sCmd = "call sp_comp_select_ticket('" + sLineId + "','" + sFirst + "','" + sLast + "','')";
+    //     var sTableTitle = "Date " + sFirst + " to " + sLast;
 
-        var sSHCode = document.getElementById('txtShipToCode').value;
-        var sSHName = document.getElementById('txtShipToName').value;
+    //     var sSHCode = document.getElementById('txtShipToCode').value;
+    //     var sSHName = document.getElementById('txtShipToName').value;
 
 
-        sSDate = dF.getFullYear() + '-' + (dF.getMonth()) + '-' + dF.getDate();
-        sEDate = dL.getFullYear() + '-' + (dL.getMonth()) + '-' + dL.getDate();
+    //     sSDate = dF.getFullYear() + '-' + (dF.getMonth()) + '-' + dF.getDate();
+    //     sEDate = dL.getFullYear() + '-' + (dL.getMonth()) + '-' + dL.getDate();
 
-        var LineLiffUrl = document.getElementById('txtLiffUrl').value;
-        var para = "?LinkCode=QUERY&LineId=" + sLineId + "&CmdCommand=" + sCmd +
-            "&TableTitle=" + sTableTitle +
-            "&SHCode=" + sSHCode + "&SHName=" + sSHName +
-            "&SDate=" + sSDate + "&EDate=" + sEDate;
+    //     var para = "?LinkCode=QUERY&LineId=" + sLineId + "&CmdCommand=" + sCmd +
+    //         "&TableTitle=" + sTableTitle +
+    //         "&SHCode=" + sSHCode + "&SHName=" + sSHName +
+    //         "&SDate=" + sSDate + "&EDate=" + sEDate;
 
-        return para;
-    }
+    //     return para;
+    // }
 
     function checkSearch() {
         var toMenu = 'search';
@@ -193,14 +205,10 @@ if ($sFlag != '0') {
         }
 
         if (sFirst != "" && sLast != "") {
-            var dF = new Date(sFirst);
-            sFirst = dF.getDate() + '/' + (dF.getMonth() + 1) + '/' + dF.getFullYear();
-            var dL = new Date(sLast);
-            sLast = dL.getDate() + '/' + (dL.getMonth() + 1) + '/' + dL.getFullYear();
-            var param = searchParamv2(sLineId, sFirst, sLast);
+            var param = searchParam();
             var menuUrl = "menu/searchMenu.php" + param;
             alert(menuUrl);
-            $("#rmxLiFFLayout").load(menuUrl);
+            // $("#rmxLiFFLayout").load(menuUrl);
             // $("#searchForm").hide();
         }
 
