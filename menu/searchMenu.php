@@ -127,9 +127,9 @@ if ($status == 'check') {
     $getData = getDataFromDatabase($getDataFromUrl);
     $sFlag = $getData->sFlag;
     $LineId = $getData->LineId;
-    $ShipToCode = $getData->ShipToCode;
-    $ShipToName = $getData->ShipToName;
-    $RetCommand = $getData->RetCommand;
+    $shipToCode = $getData->ShipToCode;
+    $shipToName = $getData->ShipToName;
+    $retCommand = $getData->RetCommand;
 }
 
 if ($sFlag != '0') {
@@ -207,8 +207,8 @@ if ($sFlag != '0') {
         if (sFirst != "" && sLast != "") {
             var param = searchParam();
             var menuUrl = "menu/searchMenu.php" + param;
-            // alert(menuUrl);
-            $("#rmxLiFFLayout").load(menuUrl);
+            alert(menuUrl);
+            // $("#rmxLiFFLayout").load(menuUrl);
             // $("#searchForm").hide();
         }
 
