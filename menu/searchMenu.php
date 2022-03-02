@@ -192,7 +192,7 @@ if ($sFlag != '0') {
 
             var param = urlSelectMenu.paramS + paramTableTitle + paramshipTo + paramDateTo;
 
-            var menuUrl = sUrl + "menu/searchMenu.php" + param;
+            var menuUrl = sUrl + "?menu=search" + param;
             alert(menuUrl);
 
             location.assign(menuUrl);
