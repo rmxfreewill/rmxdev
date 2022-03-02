@@ -127,8 +127,6 @@ if ($status == 'check') {
     echo json_encode($getDataFromUrl);
     echo "<br>";
     echo $status;
-
-
 } else if ($status == 'init') {
     $getData = getDataFromDatabase($getDataFromUrl);
     $sFlag = $getData->sFlag;
@@ -149,6 +147,7 @@ if ($sFlag != '0') {
 <div id="searchLists"></div>
 <script>
     function checkSearch() {
+
         var toMenu = 'search';
         var toStatus = 'check';
         var sUrl = "<? echo sURL; ?>";
@@ -169,7 +168,7 @@ if ($sFlag != '0') {
         }
 
         if (sFirst != "" && sLast != "") {
-
+            $("#rmxLoader").show();
             var dF = new Date(sFirst);
             sFirst = dF.getDate() + '/' + (dF.getMonth() + 1) + '/' + dF.getFullYear();
             var dL = new Date(sLast);
@@ -183,8 +182,10 @@ if ($sFlag != '0') {
             var paramDateTo = "&SDate=" + sSDate + "&EDate=" + sEDate;
             // alert(paramDateTo);
 
-            var sSHCode = "<?php //echo $shipToCode; ?>";
-            var sSHName = "<?php //echo $shipToName; ?>";
+            var sSHCode = "<?php //echo $shipToCode; 
+                            ?>";
+            var sSHName = "<?php //echo $shipToName; 
+                            ?>";
             var paramshipTo = "&SHCode=" + sSHCode + "&SHName=" + sSHName;
 
             var sCmd = "call sp_comp_select_ticket('" + sLineId + "','" + sFirst + "','" + sLast + "')";
@@ -195,9 +196,9 @@ if ($sFlag != '0') {
 
             var menuUrl = "menu/searchMenu.php" + param;
             alert(menuUrl);
-            $("#rmxLoader").show();
-            $("#rmxLiFFLayout").load(menuUrl);
-            // $("#searchForm").hide();
+
+            location.assign(sUrl + "?menu=search"+ param);
+            // $("#rmxLiFFLayout").load(menuUrl);
         }
 
     }
