@@ -123,6 +123,12 @@ if ($status == 'check') {
     // $RetCommand = sendQuery('QueryCommand', COMPANY_URL, $LineId, COMPANY_CODE, $CmdCommand);
     // $getData = getDataFromDatabase($getDataFromUrl);
     // $sFlag = $getData->sFlag;
+
+    echo json_encode($getDataFromUrl);
+    echo "<br>";
+    echo $status;
+
+
 } else if ($status == 'init') {
     $getData = getDataFromDatabase($getDataFromUrl);
     $sFlag = $getData->sFlag;
@@ -135,9 +141,9 @@ if ($status == 'check') {
 if ($sFlag != '0') {
     ticketSearchForm();
 } else {
-    echo json_encode($getDataFromUrl);
-    echo "<br>";
-    echo $status;
+    // echo json_encode($getDataFromUrl);
+    // echo "<br>";
+    // echo $status;
 }
 ?>
 <div id="searchLists"></div>
@@ -188,7 +194,8 @@ if ($sFlag != '0') {
             var param = urlSelectMenu.paramS + paramTableTitle + paramshipTo + paramDateTo;
 
             var menuUrl = "menu/searchMenu.php" + param;
-            // alert(menuUrl);
+            alert(menuUrl);
+            $("#rmxLoader").show();
             $("#rmxLiFFLayout").load(menuUrl);
             // $("#searchForm").hide();
         }
