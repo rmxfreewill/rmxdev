@@ -165,7 +165,7 @@ if ($sFlag != '0') {
 
         var returnParam = urlSelectMenu.paramS + paramTableTitle + paramshipTo + paramDateTo;
         alert(returnParam);
-        
+
         return returnParam;
     }
 
@@ -209,7 +209,6 @@ if ($sFlag != '0') {
         }
 
         if (sFirst != "" && sLast != "") {
-            alert(sFirst);
             var param = searchParam();
             var menuUrl = "menu/searchMenu.php" + param;
             alert(menuUrl);
