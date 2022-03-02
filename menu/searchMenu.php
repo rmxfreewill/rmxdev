@@ -207,6 +207,7 @@ if ($sFlag != '0') {
 
     $(function() {
         var sFlag = "<?php echo $sFlag; ?>";
+        alert(sFlag);
         if (sFlag != '') {
             $("#rmxLoader").hide();
         }
