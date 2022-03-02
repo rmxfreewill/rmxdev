@@ -200,8 +200,8 @@ if ($sFlag != '0') {
             var param = urlSelectMenu.paramS + paramTableTitle + paramshipTo + paramDateTo;
             var menuUrl = "menu/searchMenu.php" + param;
 
-            menuUrl = "http://www.google.com";
-            $("#rmxLiFFLayout").load(menuUrl);
+
+            $("#rmxLiFFLayout").load("menu/aa.txt");
 
             // var menuUrl = sUrl + "?menu=search" + param;
             // location.assign(menuUrl);
