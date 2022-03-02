@@ -182,9 +182,9 @@ if ($sFlag != '0') {
             var paramDateTo = "&SDate=" + sSDate + "&EDate=" + sEDate;
             // alert(paramDateTo);
 
-            var sSHCode = "<?php //echo $shipToCode; 
+            var sSHCode = "<?php echo $shipToCode;
                             ?>";
-            var sSHName = "<?php //echo $shipToName; 
+            var sSHName = "<?php echo $shipToName;
                             ?>";
             var paramshipTo = "&SHCode=" + sSHCode + "&SHName=" + sSHName;
 
@@ -194,11 +194,11 @@ if ($sFlag != '0') {
 
             var param = urlSelectMenu.paramS + paramTableTitle + paramshipTo + paramDateTo;
 
-            var menuUrl = "menu/searchMenu.php" + param;
+            var menuUrl = sUrl + "menu/searchMenu.php" + param;
             alert(menuUrl);
 
-            location.assign(sUrl + "?menu=search"+ param);
-            // $("#rmxLiFFLayout").load(menuUrl);
+            // location.assign(menuUrl);
+            $("#rmxLiFFLayout").load(menuUrl);
         }
 
     }
