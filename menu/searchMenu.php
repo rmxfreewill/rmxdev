@@ -220,10 +220,6 @@ if ($sFlag != '0') {
     }
 
     $(function() {
-
-        var sUrl = "<? echo sURL; ?>";
-        alert(sUrl);
-
         var sFlag = "<?php echo $sFlag; ?>";
         if (sFlag != '') {
             $("#rmxLoader").hide();
