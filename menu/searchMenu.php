@@ -143,6 +143,9 @@ if ($sFlag != '0') {
 <script>
     function searchParam() {
         var dF = new Date(sFirst);
+        alert(dF);
+
+        var dF = new Date(sFirst);
         sFirst = dF.getDate() + '/' + (dF.getMonth() + 1) + '/' + dF.getFullYear();
         var dL = new Date(sLast);
         sLast = dL.getDate() + '/' + (dL.getMonth() + 1) + '/' + dL.getFullYear();
