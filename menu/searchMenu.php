@@ -182,10 +182,8 @@ if ($sFlag != '0') {
             var paramDateTo = "&SDate=" + sSDate + "&EDate=" + sEDate;
             // alert(paramDateTo);
 
-            var sSHCode = "<?php echo $shipToCode;
-                            ?>";
-            var sSHName = "<?php echo $shipToName;
-                            ?>";
+            var sSHCode = "<?php echo $shipToCode;?>";
+            var sSHName = "<?php echo $shipToName;?>";
             var paramshipTo = "&SHCode=" + sSHCode + "&SHName=" + sSHName;
 
             var sCmd = "call sp_comp_select_ticket('" + sLineId + "','" + sFirst + "','" + sLast + "')";
