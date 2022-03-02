@@ -141,36 +141,6 @@ if ($sFlag != '0') {
 ?>
 <div id="searchLists"></div>
 <script>
-    function searchParam() {
-
-
-        var dF = new Date(sFirst);
-        sFirst = dF.getDate() + '/' + (dF.getMonth() + 1) + '/' + dF.getFullYear();
-        var dL = new Date(sLast);
-        sLast = dL.getDate() + '/' + (dL.getMonth() + 1) + '/' + dL.getFullYear();
-        var sTableTitle = "Date " + sFirst + " to " + sLast;
-        var paramTableTitle = "&TableTitle=" + sTableTitle;
-        alert(paramTableTitle);
-
-        var sSDate = dF.getFullYear() + '-' + (dF.getMonth()) + '-' + dF.getDate();
-        var sEDate = dL.getFullYear() + '-' + (dL.getMonth()) + '-' + dL.getDate();
-        var paramDateTo = +"&SDate=" + sSDate + "&EDate=" + sEDate;
-        alert(paramDateTo);
-
-        var sSHCode = "<?php echo $shipToCode; ?>";
-        var sSHName = "<?php echo $shipToName; ?>";
-        var paramshipTo = "&SHCode=" + sSHCode + "&SHName=" + sSHName;
-
-        var sCmd = "call sp_comp_select_ticket('" + sLineId + "','" + sFirst + "','" + sLast + "')";
-        var urlSelectMenu = rmxSelectMenu(sUrl, toMenu, sLineId, sCmd, toStatus);
-        alert(urlSelectMenu);
-
-        var returnParam = urlSelectMenu.paramS + paramTableTitle + paramshipTo + paramDateTo;
-        alert(returnParam);
-
-        return returnParam;
-    }
-
     // function searchParamv2(sLineId, sFirst, sLast) {
     //     var sCmd = "call sp_comp_select_ticket('" + sLineId + "','" + sFirst + "','" + sLast + "','')";
     //     var sTableTitle = "Date " + sFirst + " to " + sLast;
