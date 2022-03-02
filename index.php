@@ -81,9 +81,7 @@ $Function != '' ?? $Function = $menu;
                                 } else if (toMenu == "profile") {
                                     menuUrl = "menu/profileMenu.php" + paramS;
                                 } else if (toMenu == "search") {
-                                    
                                     menuUrl = "menu/searchMenu.php" + paramS;
-                                    alert(menuUrl);
                                 }
 
                                 if (toStatus == 'init' || toStatus == 'check') {

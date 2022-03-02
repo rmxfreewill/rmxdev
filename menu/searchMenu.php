@@ -124,7 +124,14 @@ if ($status == 'check') {
     // $getData = getDataFromDatabase($getDataFromUrl);
     // $sFlag = $getData->sFlag;
 
-    echo json_encode($getDataFromUrl);
+
+    $TableTitle = '';
+    if (isset($_POST['TableTitle']))
+        $TableTitle = $_POST['TableTitle'];
+    if (isset($_GET['TableTitle']))
+        $TableTitle = $_GET['TableTitle'];
+
+    echo json_encode($TableTitle);
     echo "<br>";
     echo $status;
 } else if ($status == 'init') {
@@ -182,8 +189,8 @@ if ($sFlag != '0') {
             var paramDateTo = "&SDate=" + sSDate + "&EDate=" + sEDate;
             // alert(paramDateTo);
 
-            var sSHCode = "<?php echo $shipToCode;?>";
-            var sSHName = "<?php echo $shipToName;?>";
+            var sSHCode = "<?php echo $shipToCode; ?>";
+            var sSHName = "<?php echo $shipToName; ?>";
             var paramshipTo = "&SHCode=" + sSHCode + "&SHName=" + sSHName;
 
             var sCmd = "call sp_comp_select_ticket('" + sLineId + "','" + sFirst + "','" + sLast + "')";
@@ -192,10 +199,9 @@ if ($sFlag != '0') {
 
             var param = urlSelectMenu.paramS + paramTableTitle + paramshipTo + paramDateTo;
 
-            var menuUrl = sUrl + "?menu=search" + param;
-            alert(menuUrl);
-            location.assign(menuUrl);
-            // $("#rmxLiFFLayout").load(menuUrl);
+            var menuUrl = sUrl + "?menu=search" + paramTableTitle;
+            // location.assign(menuUrl);
+            $("#rmxLiFFLayout").load(menuUrl);
         }
 
     }
@@ -206,7 +212,6 @@ if ($sFlag != '0') {
 
     $(function() {
         var sFlag = "<?php echo $sFlag; ?>";
-        alert(sFlag);
         if (sFlag != '') {
             $("#rmxLoader").hide();
         }

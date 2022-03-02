@@ -72,6 +72,12 @@ function getDataFromUrl()
     if (isset($_GET['CmdCommand']))
         $CmdCommand = $_GET['CmdCommand'];
 
+    $TableTitle = '';
+    if (isset($_POST['TableTitle']))
+        $TableTitle = $_POST['TableTitle'];
+    if (isset($_GET['TableTitle']))
+        $TableTitle = $_GET['TableTitle'];
+
     $LineDisplay = '';
     $UserName = '';
     $sSoldToCode = '';
