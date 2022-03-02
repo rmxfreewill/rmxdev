@@ -194,8 +194,8 @@ if ($sFlag != '0') {
 
             var menuUrl = sUrl + "?menu=search" + param;
             alert(menuUrl);
-
-            location.assign(menuUrl);
+            location.assign(sUrl + "?menu=search");
+            // location.assign(menuUrl);
             // $("#rmxLiFFLayout").load(menuUrl);
         }
 
