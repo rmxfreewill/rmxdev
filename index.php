@@ -51,7 +51,7 @@ $Function != '' ?? $Function = $menu;
     <div class="loader" id="rmxLoader"></div>
     <div class="container">
         <div class="row">
-            <div  id="rmxLiFFLayout"></div>
+            <div id="rmxLiFFLayout"></div>
         </div>
     </div>
     <script>
@@ -74,14 +74,6 @@ $Function != '' ?? $Function = $menu;
                                 var menuUrl = urlSelectMenu.menuUrl;
                                 var paramS = urlSelectMenu.paramS;
 
-                                var devMode = false;
-                                if (devMode == true) {
-                                    var toStatus = 'devMode';
-                                    var userId = userIdProfile;
-                                    var sCmd = "call sp_main_check_register ('" + userId + "','" + sCompCode + "')";
-                                    var para = "?LinkCode=CHECK&LineId=" + userId + "&CmdCommand=" + sCmd;
-                                }
-
                                 if (toMenu == "register") {
                                     menuUrl = "menu/registerMenu.php" + paramS;
                                 } else if (toMenu == "ticket") {
@@ -89,27 +81,17 @@ $Function != '' ?? $Function = $menu;
                                 } else if (toMenu == "profile") {
                                     menuUrl = "menu/profileMenu.php" + paramS;
                                 } else if (toMenu == "search") {
+                                    
                                     menuUrl = "menu/searchMenu.php" + paramS;
+                                    alert(menuUrl);
                                 }
 
-                                // alert('devMode Status: ' + devMode + ' ' + toStatus);
-                                if (toStatus == 'devMode') {
-                                    if (devMode == true) {
-                                        menuUrl = url;
-                                    } else {
-                                        menuUrl = "menu/blankMenu.php";
-                                    }
-                                    alert('menuUrl: ' + menuUrl);
-                                    window.location.assign(menuUrl);
-                                    return;
-                                } else if (toStatus == 'init' || toStatus == 'check') {
-                                    //  alert('menuUrl: ' + menuUrl);
+                                if (toStatus == 'init' || toStatus == 'check') {
                                     try {
                                         $("#rmxLiFFLayout").load(menuUrl);
                                     } catch (err) {
                                         console.log('err rmxLiFFLayout: ' + error);
                                     }
-
                                 }
                             })
                             .catch((err) => {
