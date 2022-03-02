@@ -198,10 +198,14 @@ if ($sFlag != '0') {
             // alert(urlSelectMenu);
 
             var param = urlSelectMenu.paramS + paramTableTitle + paramshipTo + paramDateTo;
+            var menuUrl = "menu/searchMenu.php" + param;
 
-            var menuUrl = sUrl + "?menu=search" + paramTableTitle;
-            // location.assign(menuUrl);
+            menuUrl = "http://www.google.com";
             $("#rmxLiFFLayout").load(menuUrl);
+
+            // var menuUrl = sUrl + "?menu=search" + param;
+            // location.assign(menuUrl);
+
         }
 
     }
