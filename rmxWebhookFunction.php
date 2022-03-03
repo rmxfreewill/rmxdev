@@ -48,8 +48,8 @@ function rmxChangeRegisterRichMenu($LINEID)
 
 function sendMessage($replyJson)
 {
-    // $url = "https://api.line.me/v2/bot/message/multicast";
-    $url = "https://api.line.me/v2/bot/message/push";
+    $url = "https://api.line.me/v2/bot/message/multicast";
+    // $url = "https://api.line.me/v2/bot/message/push";
 
     $sendInfo['URL'] = $url;
     $sendInfo['AccessToken'] = $GLOBALS['BEARER_TOKEN'];
