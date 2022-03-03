@@ -229,7 +229,7 @@ function inputWebhook($LINEData)
         $replyJson["to"] = [$replyUserId];
         $replyJson["messages"][0] = replyJsonMessage($jsonData, $replyUserId);
         $encodeJson = json_encode($replyJson);
-        echo json_decode($encodeJson);
+        echo $encodeJson;
         $results = sendMessage($encodeJson);
         echo $results;
         http_response_code(200);
