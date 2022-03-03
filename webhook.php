@@ -178,8 +178,6 @@ function replyJsonMessage($jsonData, $LineId)
         }
     }
 
-    echo $flexMessage;
-
     return $flexMessage;
 }
 
@@ -231,6 +229,7 @@ function inputWebhook($LINEData)
         $replyJson["to"] = [$replyUserId];
         $replyJson["messages"][0] = replyJsonMessage($jsonData, $replyUserId);
         $encodeJson = json_encode($replyJson);
+        echo $encodeJson;
         $results = sendMessage($encodeJson);
         echo $results;
         http_response_code(200);
