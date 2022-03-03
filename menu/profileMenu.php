@@ -59,7 +59,7 @@ try {
                 <input type="input" class="form-control form-control-lg" id="soldToCodeText" value="<?php echo $soldToCodeText; ?>" disabled>
                 <label class="col-sm-2 col-form-label col-form-label-lg  text-secondaryy">ShipToCode</label>
                 <input type="input" class="form-control form-control-lg " id="shipToCodeText" value="<?php echo $shipToCodeText; ?>" disabled>
-                <button class="btn btn-outline-danger btn-lg m-3 p-3" type="button" id="btnLogout" onclick="checkLogout()">Logout</button>
+                <button class="btn btn-outline-danger btn-lg" type="button" id="btnLogout" onclick="checkLogout('profileMenu')">Logout</button>
             </div>
         </div>
     </div>
@@ -117,10 +117,12 @@ try {
     </div>
 </div>
 <script>
-    function checkLogout() {
-        <?php
-        //rmxChangeRichMenu('LOGOUT', $LineId);
-        ?>
+    function checkLogout(menu) {
+        if (menu == 'profileMenu') {
+            <?php
+            //rmxChangeRichMenu('LOGOUT', $LineId);
+            ?>
+        }
         rmxCloseWindow();
     }
 
