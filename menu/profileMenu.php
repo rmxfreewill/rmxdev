@@ -120,7 +120,7 @@ try {
     function checkLogout(menu) {
         if (menu == 'profileMenu') {
             <?php
-            //rmxChangeRichMenu('LOGOUT', $LineId);
+            rmxChangeRichMenu('LOGOUT', $LineId);
             ?>
         }
         rmxCloseWindow();
