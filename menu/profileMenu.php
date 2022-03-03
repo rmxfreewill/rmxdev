@@ -7,6 +7,8 @@ ini_set('display_errors', 'On');
 include($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
 include("function/globalMenuFunc.php");
 
+$btnLogout = "false";
+
 $getDataFromUrl = getDataFromUrl();
 $LineId = $getDataFromUrl->LineId;
 
@@ -59,7 +61,7 @@ try {
                 <input type="input" class="form-control form-control-lg" id="soldToCodeText" value="<?php echo $soldToCodeText; ?>" disabled>
                 <label class="col-sm-2 col-form-label col-form-label-lg  text-secondaryy">ShipToCode</label>
                 <input type="input" class="form-control form-control-lg " id="shipToCodeText" value="<?php echo $shipToCodeText; ?>" disabled>
-                <button class="btn btn-outline-danger btn-lg mt-3" type="button" id="btnLogout" onclick="checkLogout('profileMenu')">Logout</button>
+                <button class="btn btn-outline-danger btn-lg mt-3" type="button" id="btnLogout" onclick="checkLogout()">Logout</button>
             </div>
         </div>
     </div>
@@ -120,8 +122,10 @@ try {
     $(function() {
         $(".loader").hide();
 
-        function checkLogout(menu) {
-            if (menu == 'profileMenu') {
+        function checkLogout() {
+            var btnLogout = "<? echo $btnLogout; ?>";
+            alert(btnLogout);
+            if (btnLogout == "true") {
                 <?php
                 //rmxChangeRichMenu('LOGOUT', $LineId);
                 ?>
