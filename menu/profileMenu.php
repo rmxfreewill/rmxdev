@@ -61,7 +61,7 @@ try {
                 <input type="input" class="form-control form-control-lg" id="soldToCodeText" value="<?php echo $soldToCodeText; ?>" disabled>
                 <label class="col-sm-2 col-form-label col-form-label-lg  text-secondaryy">ShipToCode</label>
                 <input type="input" class="form-control form-control-lg " id="shipToCodeText" value="<?php echo $shipToCodeText; ?>" disabled>
-                <button class="btn btn-outline-danger btn-lg mt-3" type="button" id="btnLogout">Logout</button>
+                <!-- <button class="btn btn-outline-danger btn-lg mt-3" type="button" id="btnLogout">Logout</button> -->
             </div>
         </div>
     </div>
@@ -121,11 +121,5 @@ try {
 <script>
     $(function() {
         $(".loader").hide();
-        $("#btnLogout").click(function() {
-            <?php
-            // rmxChangeRichMenu('LOGOUT', $LineId);
-            ?>
-            rmxCloseWindow();
-        });
     });
 </script>
