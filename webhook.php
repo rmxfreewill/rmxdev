@@ -210,6 +210,7 @@ function replyJsonMessage($jsonData, $LineId)
                 }
               }
             ';
+            $flexMessage = json_encode($flexMessage);
         }
     }
 
