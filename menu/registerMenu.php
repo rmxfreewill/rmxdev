@@ -63,7 +63,7 @@ try {
         if (sFlag == '4') {
 
             <?php
-            rmxChangeRichMenu('MEMBER', $LineId);
+            // rmxChangeRichMenu('MEMBER', $LineId);
             ?>
 
             rmxCloseWindow();
