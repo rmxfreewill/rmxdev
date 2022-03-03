@@ -7,7 +7,7 @@ ini_set('display_errors', 'On');
 include($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
 include("function/globalMenuFunc.php");
 
-$btnLogout = "false";
+
 
 $getDataFromUrl = getDataFromUrl();
 $LineId = $getDataFromUrl->LineId;
@@ -121,17 +121,11 @@ try {
 <script>
     $(function() {
         $(".loader").hide();
-
         $("#btnLogout").click(function() {
-            var btnlogout = "<? echo $btnLogout; ?>";
-            alert("The paragraph was clicked." + btnlogout);
-        });
-
-        function checkLogout() {
             <?php
-            //rmxChangeRichMenu('LOGOUT', $LineId);
+            rmxChangeRichMenu('LOGOUT', $LineId);
             ?>
             rmxCloseWindow();
-        }
+        });
     });
 </script>
