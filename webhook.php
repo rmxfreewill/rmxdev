@@ -152,6 +152,70 @@ function replyJsonMessage($jsonData, $LineId)
             $flexMessage = ticketDetailFlexMessage($LineId);
         } else if ($case  == 'logout') {
             rmxChangeRegisterRichMenu($LineId);
+        } else if ($case == 'hi') {
+            $flexMessage = '
+            {
+                "to": ' . $LineId . ',
+                "messages": [
+                  {
+                    "type": "flex",
+                    "altText": "Ticket Detail",
+                    "contents": {
+                      "type": "bubble",
+                      "header": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "Ticket Detail",
+                            "size": "xl",
+                            "weight": "bold",
+                            "color": "#B6961EFF",
+                            "wrap": true
+                          },
+                          {
+                            "type": "separator"
+                          }
+                        ]
+                      },
+                      "body": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "spacing": "sm",
+                        "contents": [
+                          {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "spacing": "sm",
+                            "contents": [
+                              {
+                                "type": "text",
+                                "text": "Ticket No.",
+                                "size": "sm",
+                                "color": "#AAAAAA",
+                                "weight": "bold",
+                                "flex": 2,
+                                "wrap": true
+                              },
+                              {
+                                "type": "text",
+                                "text": "1011808270007",
+                                "size": "sm",
+                                "color": "#666666",
+                                "flex": 4,
+                                "wrap": true,
+                                "align": "end"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            ';
         }
     }
     return $flexMessage;
