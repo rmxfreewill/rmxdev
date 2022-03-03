@@ -3,6 +3,9 @@
 error_reporting(-1);
 ini_set('display_errors', 'On');
 
+include($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
+include("function/globalMenuFunc.php");
+
 $sFlag = '';
 
 try {
