@@ -155,7 +155,7 @@ function replyJsonMessage($jsonData, $LineId)
         } else if ($case == 'hi') {
             $flexMessage = '
             {
-                "to": "' . $LineId . '",
+                "to": "U3b0a121d2e687deed7217fa14dcb0b78",
                 "messages": [
                   {
                     "type": "flex",
@@ -218,6 +218,9 @@ function replyJsonMessage($jsonData, $LineId)
             ';
         }
     }
+
+    echo $flexMessage;
+    
     return $flexMessage;
 }
 
