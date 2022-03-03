@@ -198,10 +198,10 @@ if ($sFlag != '0') {
             // alert(urlSelectMenu);
 
             var param = urlSelectMenu.paramS + paramTableTitle + paramshipTo + paramDateTo;
-            var menuUrl = "menu/searchMenu.php" + param;
+            var menuUrl = "menu/searchMenu.php?" + param;
 
 
-            $("#rmxLiFFLayout").load("menu/searchMenu.php?status=check&TableTitle=HiHi");
+            $("#rmxLiFFLayout").load("menu/searchMenu.php?" + urlSelectMenu.paramS);
 
             // var menuUrl = sUrl + "?menu=search" + param;
             // location.assign(menuUrl);
