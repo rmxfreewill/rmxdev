@@ -187,7 +187,7 @@ function replyJsonMessage($jsonData, $LineId)
                         "contents": [
                           {
                             "type": "text",
-                            "text": "Ticket No.",
+                            "text": "LineID",
                             "size": "sm",
                             "color": "#AAAAAA",
                             "weight": "bold",
@@ -196,7 +196,7 @@ function replyJsonMessage($jsonData, $LineId)
                           },
                           {
                             "type": "text",
-                            "text": "1011808270007",
+                            "text": "'.$LineId.'",
                             "size": "sm",
                             "color": "#666666",
                             "flex": 4,
