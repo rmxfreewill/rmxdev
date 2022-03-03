@@ -55,9 +55,8 @@ try {
     $(function() {
         var sUrl = "<?php echo sURL; ?>";
         var sFlag = "<?php echo $sFlag; ?>";
-        alert(sFlag);
         var sStatus = "<?php echo $status; ?>";
-        alert(sStatus);
+        alert("status: " + sStatus + " | flag: " + sFlag);
         if (sStatus == 'check') {
             location.assign(sUrl + "?menu=register");
         } else {
