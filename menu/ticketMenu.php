@@ -9,7 +9,7 @@ include("function/globalMenuFunc.php");
 $sFlag = '';
 
 try {
-    include_once("zMenuFunction.php");
+
 
     $getDataFromUrl = getDataFromUrl();
     $status = $getDataFromUrl->status;
