@@ -153,42 +153,7 @@ function replyJsonMessage($jsonData, $LineId)
         } else if ($case  == 'logout') {
             rmxChangeRegisterRichMenu($LineId);
         } else if ($case == 'hi') {
-            $flexMessage = '
-            {
-                "to": "U3b0a121d2e687deed7217fa14dcb0b78",
-                "messages": [
-                  {
-                    "type": "flex",
-                    "altText": "Ticket Detail",
-                    "contents": {
-                      "type": "bubble",
-                      "header": {
-                        "type": "box",
-                        "layout": "vertical",
-                        "contents": [
-                          {
-                            "type": "text",
-                            "text": "Ticket Detail",
-                            "size": "xl",
-                            "weight": "bold",
-                            "color": "#B6961EFF",
-                            "wrap": true
-                          },
-                          {
-                            "type": "separator"
-                          }
-                        ]
-                      },
-                      "body": {
-                        "type": "box",
-                        "layout": "vertical",
-                        "spacing": "sm",
-                        "contents": [
-                          {
-                            "type": "box",
-                            "layout": "horizontal",
-                            "spacing": "sm",
-                            "contents": [
+            $flexMessage = '[
                               {
                                 "type": "text",
                                 "text": "Ticket No.",
@@ -209,18 +174,12 @@ function replyJsonMessage($jsonData, $LineId)
                               }
                             ]
                           }
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
-            ';
+                        ]';
         }
     }
 
     echo $flexMessage;
-    
+
     return $flexMessage;
 }
 
