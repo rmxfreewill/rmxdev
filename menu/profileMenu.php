@@ -121,7 +121,7 @@ try {
 <script>
     $(function() {
         $(".loader").hide();
-
+ 
         function checkLogout() {
             var btnLogout = "<? echo $btnLogout; ?>";
             alert(btnLogout);
