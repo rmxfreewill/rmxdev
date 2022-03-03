@@ -66,13 +66,12 @@ try {
                 rmxChangeRichMenu('MEMBER', $LineId);
                 ?>
                 rmxCloseWindow();
-            } else {
-                if (sFlag != '') {
-                    $("#rmxLoader").hide();
-                }
             }
         }
-
+        
+        if (sFlag != '') {
+            $("#rmxLoader").hide();
+        }
 
     });
 </script>
