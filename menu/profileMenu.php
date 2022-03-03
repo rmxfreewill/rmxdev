@@ -117,16 +117,16 @@ try {
     </div>
 </div>
 <script>
-    function checkLogout(menu) {
-        if (menu == 'profileMenu') {
-            <?php
-            rmxChangeRichMenu('LOGOUT', $LineId);
-            ?>
-        }
-        rmxCloseWindow();
-    }
-
     $(function() {
         $(".loader").hide();
+
+        function checkLogout(menu) {
+            if (menu == 'profileMenu') {
+                <?php
+                rmxChangeRichMenu('LOGOUT', $LineId);
+                ?>
+            }
+            rmxCloseWindow();
+        }
     });
 </script>
