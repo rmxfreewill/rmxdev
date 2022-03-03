@@ -201,7 +201,7 @@ if ($sFlag != '0') {
             var menuUrl = "menu/searchMenu.php" + param;
 
 
-            $("#rmxLiFFLayout").load("menu/aa.txt");
+            $("#rmxLiFFLayout").load("menu/searchMenu.php?status=check&TableTitle=HiHi");
 
             // var menuUrl = sUrl + "?menu=search" + param;
             // location.assign(menuUrl);
