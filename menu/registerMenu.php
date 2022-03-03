@@ -60,9 +60,14 @@ try {
         }
 
         var sFlag = "<?php echo $sFlag; ?>";
+
+      alert(sFlag);
         if (sFlag == '4') {
 
             <?php
+
+
+
             // rmxChangeRichMenu('MEMBER', $LineId);
             ?>
 
