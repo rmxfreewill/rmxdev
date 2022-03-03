@@ -123,7 +123,7 @@ try {
         $(".loader").hide();
         $("#btnLogout").click(function() {
             <?php
-            rmxChangeRichMenu('LOGOUT', $LineId);
+            // rmxChangeRichMenu('LOGOUT', $LineId);
             ?>
             rmxCloseWindow();
         });
