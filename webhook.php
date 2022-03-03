@@ -6,7 +6,6 @@ ini_set('display_errors', 'On');
 include_once("define_Global.php");
 include_once("rmxWebhookFunction.php");
 include_once("menu/zApiFunction.php");
-include("function/globalMenuFunc.php");
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");

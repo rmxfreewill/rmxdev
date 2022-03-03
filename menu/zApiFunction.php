@@ -2,7 +2,7 @@
 
 // include($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
 
-function rmxGetDataLiff($menu, $LineId)
+function rmxGetDataLiffv1($menu, $LineId)
 {
     // $rmx_api_url = RMX_HEROKU_API_URL;
     $rmx_api_url = RMX_SERVER_API_URL;
