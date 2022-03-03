@@ -117,5 +117,14 @@ try {
     </div>
 </div>
 <script>
-    $(".loader").hide();
+    function checkLogout() {
+        <?php
+        rmxChangeRichMenu('LOGOUT', $LineId);
+        ?>
+        rmxCloseWindow();
+    }
+
+    $(function() {
+        $(".loader").hide();
+    });
 </script>
