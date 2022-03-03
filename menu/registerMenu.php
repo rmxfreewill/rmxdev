@@ -55,13 +55,14 @@ try {
     $(function() {
         var sUrl = "<?php echo sURL; ?>";
         var sStatus = "<?php echo $status; ?>";
+         alert(sStatus);
         if (sStatus == 'check') {
             location.assign(sUrl + "?menu=register");
         }
 
         var sFlag = "<?php echo $sFlag; ?>";
 
-      alert(sFlag);
+     
         if (sFlag == '4') {
 
             <?php
