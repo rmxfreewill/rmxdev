@@ -59,7 +59,7 @@ try {
                 <input type="input" class="form-control form-control-lg" id="soldToCodeText" value="<?php echo $soldToCodeText; ?>" disabled>
                 <label class="col-sm-2 col-form-label col-form-label-lg  text-secondaryy">ShipToCode</label>
                 <input type="input" class="form-control form-control-lg " id="shipToCodeText" value="<?php echo $shipToCodeText; ?>" disabled>
-                <button class="btn btn-outline-warning btn-lg pt-3 pb-3" type="button" id="btnLogout" onclick="checkLogout()">Logout</button>
+                <button class="btn btn-outline-warning btn-md" type="button" id="btnLogout" onclick="checkLogout()">Logout</button>
             </div>
         </div>
     </div>
