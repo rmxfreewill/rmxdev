@@ -121,15 +121,14 @@ try {
 <script>
     $(function() {
         $(".loader").hide();
- 
+
         function checkLogout() {
-            var btnLogout = "<? echo $btnLogout; ?>";
-            alert(btnLogout);
-            if (btnLogout == "true") {
-                <?php
-                //rmxChangeRichMenu('LOGOUT', $LineId);
-                ?>
-            }
+            var btnlogout = "<? echo $btnLogout; ?>";
+            alert(btnlogout);
+            <?php
+            //rmxChangeRichMenu('LOGOUT', $LineId);
+            ?>
+
             rmxCloseWindow();
         }
     });
