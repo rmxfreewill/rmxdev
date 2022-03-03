@@ -8,7 +8,7 @@ $sFlag = '';
 try {
     include_once("zMenuFunction.php");
 
-    $getDataFromUrl = getDataFromUrlv2();
+    $getDataFromUrl = getDataFromUrl();
     $status = $getDataFromUrl->status;
 
     if ($status == 'init') {
