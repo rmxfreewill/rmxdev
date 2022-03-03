@@ -119,7 +119,7 @@ try {
 <script>
     function checkLogout() {
         <?php
-        rmxChangeRichMenu('LOGOUT', $LineId);
+        //rmxChangeRichMenu('LOGOUT', $LineId);
         ?>
         rmxCloseWindow();
     }
