@@ -9,16 +9,9 @@ include("define_Global.php");
 include("menu/function/globalMenuFunc.php");
 
 $getDataFromUrl = getDataFromUrl();
-$getData = getDataFromDatabase($getDataFromUrl);
-$soldToCode = $getData->SoldToCode;
 $LineId = $getDataFromUrl->LineId;
-
-
-
-
-
-echo json_encode($getData);
-
+$getData = getDataFromDatabase($getDataFromUrl);
+$sFlag = $getData->sFlag;
 ?>
 
 <!DOCTYPE HTML>
@@ -64,6 +57,7 @@ echo json_encode($getData);
                                 const userIdProfile = profile.userId;
                                 const sCompCode = "<? echo COMPANY_CODE; ?>";
                                 const sUrl = "<? echo sURL; ?>";
+                                const sFlag = "<? echo $sFlag; ?>";
                                 var getParam = rmxGetParams();
                                 var toMenu = getParam.menu;
                                 var toCmd = getParam.CmdCommand;
@@ -76,8 +70,7 @@ echo json_encode($getData);
                                     menuUrl = "menu/registerMenu.php" + paramS;
                                 }
 
-                                const soldToCode = "<? echo $soldToCode; ?>";
-                                if (soldToCode == '' || soldToCode == null) {
+                                if (sFlag == "0") {
                                     menuUrl = "menu/registerMenu.php?status=init";
                                 } else {
                                     if (toMenu == "ticket") {
