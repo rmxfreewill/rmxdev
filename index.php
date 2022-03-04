@@ -8,13 +8,11 @@ ini_set('display_errors', 'On');
 include("define_Global.php");
 include("menu/function/globalMenuFunc.php");
 
-// $getDataFromUrl = getDataFromUrl();
-// $getData = getDataFromDatabase($getDataFromUrl);
-// $soldToCode = $getData->SoldToCode;
-
 $getDataFromUrl = getDataFromUrl();
-$LineId = $getDataFromUrl->LineId;
 $getData = getDataFromDatabase($getDataFromUrl);
+$soldToCode = $getData->SoldToCode;
+$LineId = $getDataFromUrl->LineId;
+
 
 
 
