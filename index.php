@@ -81,7 +81,7 @@ $soldToCode = $getData->SoldToCode;
                                         menuUrl = "menu/searchMenu.php" + paramS;
                                     }
                                 }
-
+alert(menuUrl);
                                 if (toStatus == 'init' || toStatus == 'check') {
                                     try {
                                         $("#rmxLiFFLayout").load(menuUrl);
