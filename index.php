@@ -14,9 +14,6 @@ $LineId = $getDataFromUrl->LineId;
 $getData = getDataFromDatabase($getDataFromUrl);
 $sFlagMsg = $getData->sFlagMsg;
 $sFlag = $getData->sFlag;
-
-echo "sFlagMsg: " . $sFlagMsg;
-echo "error: " . $getData->error;
 ?>
 
 <!DOCTYPE HTML>
@@ -71,36 +68,18 @@ echo "error: " . $getData->error;
                                 var menuUrl = urlSelectMenu.menuUrl;
                                 var paramS = urlSelectMenu.paramS;
 
-                                // if (toMenu == "register") {
-                                //     menuUrl = "menu/registerMenu.php" + paramS;
-                                // }
-
-                                alert(getParam.status);
-                                if (sFlag == "4") {
-                                    if (toMenu == "ticket") {
-                                        menuUrl = "menu/ticketMenu.php" + paramS;
-                                    } else if (toMenu == "profile") {
-                                        menuUrl = "menu/profileMenu.php" + paramS;
-                                    } else if (toMenu == "search") {
-                                        menuUrl = "menu/searchMenu.php" + paramS;
-                                    } else if (toMenu == "register") {
-                                        <?php
-                                        if ($menu == "register" && $sFlag == "4") {
-                                            rmxChangeRichMenu('MEMBER', $LineId);
-                                        }
-                                        ?>
-                                        rmxCloseWindow();
-                                    }
-                                } else if (sFlag == "0") {
+                                if (toMenu == "register") {
                                     menuUrl = "menu/registerMenu.php" + paramS;
-                                    <?php
-                                    if ($sFlag == "0") {
-                                        rmxChangeRichMenu('LOGOUT', $LineId);
-                                    }
-                                    ?>
                                 }
-                                alert(sFlag);
-                                alert(menuUrl);
+                                else if(toMenu == "ticket") {
+                                    menuUrl = "menu/ticketMenu.php" + paramS;
+                                } else if (toMenu == "profile") {
+                                    menuUrl = "menu/profileMenu.php" + paramS;
+                                } else if (toMenu == "search") {
+                                    menuUrl = "menu/searchMenu.php" + paramS;
+                                }
+
+                                
                                 if (toStatus == 'init' || toStatus == 'check') {
                                     try {
                                         $("#rmxLiFFLayout").load(menuUrl);
