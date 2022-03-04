@@ -12,9 +12,10 @@ $getDataFromUrl = getDataFromUrl();
 $menu = $getDataFromUrl->menu;
 $LineId = $getDataFromUrl->LineId;
 $getData = getDataFromDatabase($getDataFromUrl);
+$sFlagMsg = $getData->sFlagMsg;
 $sFlag = $getData->sFlag;
 
-// echo "flag: " . $sFlag;
+echo "sFlagMsg: " . $sFlagMsg;
 ?>
 
 <!DOCTYPE HTML>

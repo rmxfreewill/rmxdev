@@ -137,7 +137,7 @@ function getDataFromDatabase($objParam)
                 $SoldToName = $ASRet[6];
                 $ShipToCode = $ASRet[7];
                 $ShipToName = $ASRet[8];
-                echo json_encode($RetCommand);
+                
                 $objData->UserName = $UserName;
                 $objData->EMail = $EMail;
                 $objData->Tel = $Tel;
@@ -146,6 +146,7 @@ function getDataFromDatabase($objParam)
                 $objData->ShipToCode = $ShipToCode;
                 $objData->ShipToName = $ShipToName;
                 $objData->sFlag = $sFlag;
+                $objData->sFlagMsg = $sFlagMsg;
             }
         } else {
             $objData->sFlag = '0';
