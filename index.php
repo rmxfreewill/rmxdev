@@ -16,6 +16,7 @@ $sFlagMsg = $getData->sFlagMsg;
 $sFlag = $getData->sFlag;
 
 echo "sFlagMsg: " . $sFlagMsg;
+echo "error: " . $getData->error;
 ?>
 
 <!DOCTYPE HTML>

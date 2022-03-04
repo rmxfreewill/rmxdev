@@ -137,7 +137,7 @@ function getDataFromDatabase($objParam)
                 $SoldToName = $ASRet[6];
                 $ShipToCode = $ASRet[7];
                 $ShipToName = $ASRet[8];
-                
+
                 $objData->UserName = $UserName;
                 $objData->EMail = $EMail;
                 $objData->Tel = $Tel;
@@ -154,7 +154,7 @@ function getDataFromDatabase($objParam)
         $objData->RetCommand = $RetCommand;
     } catch (\Throwable $th) {
         $objData->sFlag = '0';
-        $objData->status = $th;
+        $objData->error = $th;
     }
     $objData->LineId = $objParam->LineId;
 
