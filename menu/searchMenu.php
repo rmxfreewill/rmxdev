@@ -212,5 +212,10 @@ if ($sFlag != '0') {
         if (sFlag != '') {
             $("#rmxLoader").hide();
         }
+        
+        var sStatus = "<?php echo $status; ?>";
+        if (sStatus == 'check') {
+            $("#rmxLoader").hide();
+        }
     });
 </script>
