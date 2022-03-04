@@ -12,7 +12,6 @@ $getDataFromUrl = getDataFromUrl();
 $menu = $getDataFromUrl->menu;
 $LineId = $getDataFromUrl->LineId;
 $getData = getDataFromDatabase($getDataFromUrl);
-$sFlagMsg = $getData->sFlagMsg;
 $sFlag = $getData->sFlag;
 ?>
 
