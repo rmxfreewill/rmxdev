@@ -14,8 +14,8 @@ try {
     $LineId = $getDataFromUrl->LineId;
     $status = $getDataFromUrl->status;
     if ($status == 'check') {
-        echo json_encode($getDataFromUrl);
-        // registerDataToDatabase($getDataFromUrl);
+        // echo json_encode($getDataFromUrl);
+        registerDataToDatabase($getDataFromUrl);
     } else {
         $getData = getDataFromDatabase($getDataFromUrl);
         $sFlag = $getData->sFlag;
@@ -59,7 +59,7 @@ try {
         var sStatus = "<?php echo $status; ?>";
         // alert("status: " + sStatus + " | flag: " + sFlag);
         if (sStatus == 'check') {
-            // location.assign(sUrl + "?menu=register");
+            location.assign(sUrl + "?menu=register");
         } else {
             if (sFlag == '4') {
                 <?php

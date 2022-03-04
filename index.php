@@ -7,19 +7,9 @@ ini_set('display_errors', 'On');
 
 include("define_Global.php");
 
-$Function = '';
-if (isset($_POST['Function']))
-    $Function = $_POST['Function'];
-if (isset($_GET['Function']))
-    $Function = $_GET['Function'];
-
-$menu = '';
-if (isset($_POST['menu']))
-    $menu = $_POST['menu'];
-if (isset($_GET['menu']))
-    $menu = $_GET['menu'];
-
-$Function != '' ?? $Function = $menu;
+$getDataFromUrl = getDataFromUrl();
+$getData = getDataFromDatabase($getDataFromUrl);
+$sFlag = $getData->sFlag;
 
 ?>
 
@@ -82,6 +72,10 @@ $Function != '' ?? $Function = $menu;
                                     menuUrl = "menu/profileMenu.php" + paramS;
                                 } else if (toMenu == "search") {
                                     menuUrl = "menu/searchMenu.php" + paramS;
+                                }
+                                const sFlag = "<? echo $sFlag; ?>";
+                                if (sFlag != '4') {
+                                    menuUrl = "menu/registerMenu.php?status=init";
                                 }
 
                                 if (toStatus == 'init' || toStatus == 'check') {
