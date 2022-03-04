@@ -12,6 +12,7 @@ $getDataFromUrl = getDataFromUrl();
 $getData = getDataFromDatabase($getDataFromUrl);
 $soldToCode = $getData->SoldToCode;
 
+echo $getData;
 ?>
 
 <!DOCTYPE HTML>
@@ -39,7 +40,7 @@ $soldToCode = $getData->SoldToCode;
 </head>
 
 <body class="rmxbody">
-    <div class="loader" id="rmxLoader"></div>
+    <!-- <div class="loader" id="rmxLoader"></div> -->
     <div class="container">
         <div class="row">
             <div id="rmxLiFFLayout"></div>
@@ -69,7 +70,7 @@ $soldToCode = $getData->SoldToCode;
                                     menuUrl = "menu/registerMenu.php" + paramS;
                                 }
 
-                                var tt = "<?php echo $getData; ?>";
+ 
                                 const soldToCode = "<? echo $soldToCode; ?>";
                                 if (soldToCode == '') {
                                     menuUrl = "menu/registerMenu.php?status=init";
@@ -82,10 +83,10 @@ $soldToCode = $getData->SoldToCode;
                                         menuUrl = "menu/searchMenu.php" + paramS;
                                     }
                                 }
-                                alert(tt);
+
                                 if (toStatus == 'init' || toStatus == 'check') {
                                     try {
-                                        $("#rmxLiFFLayout").load(menuUrl);
+                                        // $("#rmxLiFFLayout").load(menuUrl);
                                     } catch (err) {
                                         console.log('err rmxLiFFLayout: ' + error);
                                     }
