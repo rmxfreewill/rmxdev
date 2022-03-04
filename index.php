@@ -12,6 +12,8 @@ $getDataFromUrl = getDataFromUrl();
 $LineId = $getDataFromUrl->LineId;
 $getData = getDataFromDatabase($getDataFromUrl);
 $sFlag = $getData->sFlag;
+
+echo "flag: " . $sFlag;
 ?>
 
 <!DOCTYPE HTML>
@@ -71,10 +73,7 @@ $sFlag = $getData->sFlag;
                                 }
 
                                 if (sFlag == "0") {
-                                    <?php
-                                    rmxChangeRichMenu('LOGOUT', $LineId);
-                                    ?>
-                                    rmxCloseWindow();
+                                    menuUrl = "menu/registerMenu.php?status=init";
                                 } else {
                                     if (toMenu == "ticket") {
                                         menuUrl = "menu/ticketMenu.php" + paramS;
