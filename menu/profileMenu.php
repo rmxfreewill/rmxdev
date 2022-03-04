@@ -53,10 +53,10 @@ try {
                 <input type="input" class="form-control form-control-lg" id="mobileText" value="<?php echo $mobileText; ?>" disabled>
                 <label class="col-sm-2 col-form-label col-form-label-lg text-secondary">Email</label>
                 <input type="input" class="form-control form-control-lg" id="emailText" value="<?php echo $emailText; ?>" disabled>
-                <label class="col-sm-2 col-form-label col-form-label-lg text-secondary">SoldToName</label>
-                <input type="input" class="form-control form-control-lg" id="soldToNameText" value="<?php echo $soldToNameText; ?>" disabled>
+                <!-- <label class="col-sm-2 col-form-label col-form-label-lg text-secondary">SoldToName</label>
+                <input type="input" class="form-control form-control-lg" id="soldToNameText" value="<?php // echo $soldToNameText; ?>" disabled>
                 <label class="col-sm-2 col-form-label col-form-label-lg  text-secondary">ShipToName</label>
-                <input type="input" class="form-control form-control-lg" id="shipToNameText" value="<?php echo $shipToNameText; ?>" disabled>
+                <input type="input" class="form-control form-control-lg" id="shipToNameText" value="<?php  // echo $shipToNameText; ?>" disabled> -->
                 <label class="col-sm-2 col-form-label col-form-label-lg text-secondary">SoldToCode</label>
                 <input type="input" class="form-control form-control-lg" id="soldToCodeText" value="<?php echo $soldToCodeText; ?>" disabled>
                 <label class="col-sm-2 col-form-label col-form-label-lg  text-secondaryy">ShipToCode</label>
