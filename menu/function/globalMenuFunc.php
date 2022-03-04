@@ -137,7 +137,7 @@ function getDataFromDatabase($objParam)
                 $SoldToName = $ASRet[6];
                 $ShipToCode = $ASRet[7];
                 $ShipToName = $ASRet[8];
-
+                echo json_encode($RetCommand);
                 $objData->UserName = $UserName;
                 $objData->EMail = $EMail;
                 $objData->Tel = $Tel;
