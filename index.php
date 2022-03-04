@@ -83,7 +83,7 @@ $soldToCode = $getData->SoldToCode;
 
                                 if (toStatus == 'init' || toStatus == 'check') {
                                     try {
-                                        // $("#rmxLiFFLayout").load(menuUrl);
+                                        $("#rmxLiFFLayout").load(menuUrl);
                                     } catch (err) {
                                         console.log('err rmxLiFFLayout: ' + error);
                                     }
