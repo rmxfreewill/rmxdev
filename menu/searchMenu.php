@@ -193,9 +193,9 @@ if ($sFlag != '0') {
             var param = urlSelectMenu.paramS + paramTableTitle + paramshipTo + paramDateTo;
             var menuUrl = "menu/searchMenu.php?" + param;
 
-            var menuUrl2 = "menu/searchMenu.php?status=check" + paramshipTo;
+            var menuUrl2 = "menu/searchMenu.php?status=check" + paramshipTo + paramDateTo;
             alert(menuUrl2);
-            
+
             $("#rmxLiFFLayout").load(menuUrl2);
 
             // var menuUrl = sUrl + "?menu=search" + param;
