@@ -22,7 +22,7 @@ try {
     $shipToNameText = $getData->ShipToName;
     $soldToCodeText = $getData->SoldToCode;
     $shipToCodeText = $getData->ShipToCode;
-
+    echo 'SoldTo: ' . json_encode($getData->SoldToCode);
     if ($nameText == '') {
         $nameText = '-';
     }

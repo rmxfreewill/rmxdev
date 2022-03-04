@@ -11,8 +11,6 @@ include("menu/function/globalMenuFunc.php");
 $getDataFromUrl = getDataFromUrl();
 $getData = getDataFromDatabase($getDataFromUrl);
 $soldToCode = $getData->SoldToCode;
-
-echo 'SoldTo: ' . json_encode($getData->SoldToCode);
 ?>
 
 <!DOCTYPE HTML>
@@ -69,7 +67,6 @@ echo 'SoldTo: ' . json_encode($getData->SoldToCode);
                                 if (toMenu == "register") {
                                     menuUrl = "menu/registerMenu.php" + paramS;
                                 }
-
 
                                 const soldToCode = "<? echo $soldToCode; ?>";
                                 if (soldToCode == '') {
