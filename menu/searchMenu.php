@@ -124,7 +124,7 @@ if ($status == 'check') {
     // $getData = getDataFromDatabase($getDataFromUrl);
     // $sFlag = $getData->sFlag;
 
-    echo json_encode($TableTitle);
+    echo json_encode($CmdCommand);
     echo "<br>";
     echo $status;
 } else if ($status == 'init') {
@@ -193,13 +193,13 @@ if ($sFlag != '0') {
             var param = urlSelectMenu.paramS + paramTableTitle + paramshipTo + paramDateTo;
             var menuUrl = "menu/searchMenu.php?" + param;
 
-            var menuUrl2 = "menu/searchMenu.php?status=check" + paramshipTo + paramDateTo + paramTableTitle;
+            var menuUrl2 = "menu/searchMenu.php?status=check" + paramshipTo + paramDateTo + urlSelectMenu.paramS + paramTableTitle;
             alert(menuUrl2);
 
-            // $("#rmxLiFFLayout").load(menuUrl2);
+            $("#rmxLiFFLayout").load(menuUrl2);
 
             // var menuUrl = sUrl + "?menu=search" + param;
-            location.assign(menuUrl2);
+            // location.assign(menuUrl2);
 
         }
 
@@ -210,14 +210,15 @@ if ($sFlag != '0') {
     }
 
     $(function() {
+
+        
+
         var sFlag = "<?php echo $sFlag; ?>";
         if (sFlag != '') {
             $("#rmxLoader").hide();
         }
 
-        // var status = "<?php echo $status; ?>";
-        // alert(status);
-        // $("#rmxLoader").hide();
+
 
     });
 </script>
