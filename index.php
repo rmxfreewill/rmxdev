@@ -9,6 +9,7 @@ include("define_Global.php");
 include("menu/function/globalMenuFunc.php");
 
 $getDataFromUrl = getDataFromUrl();
+$menu = $getDataFromUrl->menu;
 $LineId = $getDataFromUrl->LineId;
 $getData = getDataFromDatabase($getDataFromUrl);
 $sFlag = $getData->sFlag;
@@ -68,20 +69,27 @@ echo "flag: " . $sFlag;
                                 var menuUrl = urlSelectMenu.menuUrl;
                                 var paramS = urlSelectMenu.paramS;
 
-                                if (toMenu == "register") {
-                                    menuUrl = "menu/registerMenu.php" + paramS;
-                                }
+                                // if (toMenu == "register") {
+                                //     menuUrl = "menu/registerMenu.php" + paramS;
+                                // }
 
-                                if (sFlag == "0") {
-                                    menuUrl = "menu/registerMenu.php?status=init";
-                                } else {
+                                if (sFlag == "4") {
                                     if (toMenu == "ticket") {
                                         menuUrl = "menu/ticketMenu.php" + paramS;
                                     } else if (toMenu == "profile") {
                                         menuUrl = "menu/profileMenu.php" + paramS;
                                     } else if (toMenu == "search") {
                                         menuUrl = "menu/searchMenu.php" + paramS;
+                                    } else if (toMenu == "register") {
+                                        <?php
+                                        if ($menu == "register" && $sFlag == "4") {
+                                            rmxChangeRichMenu('MEMBER', $LineId);
+                                        }
+                                        ?>
+                                        rmxCloseWindow();
                                     }
+                                } else if (sFlag == "0") {
+                                    menuUrl = "menu/registerMenu.php" + paramS;
                                 }
 
                                 if (toStatus == 'init' || toStatus == 'check') {

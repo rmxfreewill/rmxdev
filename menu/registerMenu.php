@@ -61,12 +61,12 @@ try {
         if (sStatus == 'check') {
             location.assign(sUrl + "?menu=register");
         } else {
-            if (sFlag == '4') {
-                <?php
-                rmxChangeRichMenu('MEMBER', $LineId);
-                ?>
-                rmxCloseWindow();
-            }
+            // if (sFlag == '4') {
+            //     <?php
+            //     rmxChangeRichMenu('MEMBER', $LineId);
+            //     ?>
+            //     rmxCloseWindow();
+            // }
         }
 
         if (sFlag != '') {
