@@ -12,7 +12,7 @@ $getDataFromUrl = getDataFromUrl();
 $getData = getDataFromDatabase($getDataFromUrl);
 $soldToCode = $getData->SoldToCode;
 
-// echo json_encode($getData->SoldToCode);
+echo json_encode($getData);
 ?>
 
 <!DOCTYPE HTML>
@@ -86,7 +86,7 @@ $soldToCode = $getData->SoldToCode;
 
                                 if (toStatus == 'init' || toStatus == 'check') {
                                     try {
-                                        $("#rmxLiFFLayout").load(menuUrl);
+                                        // $("#rmxLiFFLayout").load(menuUrl);
                                     } catch (err) {
                                         console.log('err rmxLiFFLayout: ' + error);
                                     }
