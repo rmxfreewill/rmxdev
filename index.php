@@ -12,7 +12,7 @@ $getDataFromUrl = getDataFromUrl();
 $getData = getDataFromDatabase($getDataFromUrl);
 $soldToCode = $getData->SoldToCode;
 
-echo $getData;
+echo json_encode($getData);
 ?>
 
 <!DOCTYPE HTML>
