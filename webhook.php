@@ -225,12 +225,16 @@ function replyJsonMessagev2($jsonData, $LineId)
     $textParams = $jsonData["events"][0]["message"]["text"];
     $case = trim(strtolower($textParams));
     if ($case  == 'hi') {
-      $flexMessage = '{"message": {
+      $flexMessage = '
+      {
         "type": "text",
-        "text": "hi"
-    }}';
-
-
+        "text": "Hello, I am Cony!!",
+        "sender": {
+            "name": "Cony",
+            "iconUrl": "https://line.me/conyprof"
+        }
+    }
+      ';
     }
   }
   return $flexMessage = json_decode($flexMessage);
