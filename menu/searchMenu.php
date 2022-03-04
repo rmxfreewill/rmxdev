@@ -193,8 +193,10 @@ if ($sFlag != '0') {
             var param = urlSelectMenu.paramS + paramTableTitle + paramshipTo + paramDateTo;
             var menuUrl = "menu/searchMenu.php?" + param;
 
-
-            $("#rmxLiFFLayout").load("menu/searchMenu.php?status=check" + paramTableTitle);
+            var menuUrl2 = "menu/searchMenu.php?status=check" + paramshipTo;
+            alert(menuUrl2);
+            
+            $("#rmxLiFFLayout").load(menuUrl2);
 
             // var menuUrl = sUrl + "?menu=search" + param;
             // location.assign(menuUrl);
@@ -212,7 +214,7 @@ if ($sFlag != '0') {
         if (sFlag != '') {
             $("#rmxLoader").hide();
         }
-        
+
         var sStatus = "<?php echo $status; ?>";
         if (sStatus == 'check') {
             $("#rmxLoader").hide();
