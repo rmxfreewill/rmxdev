@@ -193,13 +193,13 @@ if ($sFlag != '0') {
             var param = urlSelectMenu.paramS + paramTableTitle + paramshipTo + paramDateTo;
             var menuUrl = "menu/searchMenu.php?" + param;
 
-            var menuUrl2 = "menu/searchMenu.php?status=check" + paramshipTo + paramDateTo;
+            var menuUrl2 = "menu/searchMenu.php?status=check" + paramshipTo + paramDateTo + paramTableTitle;
             alert(menuUrl2);
 
-            $("#rmxLiFFLayout").load(menuUrl2);
+            // $("#rmxLiFFLayout").load(menuUrl2);
 
             // var menuUrl = sUrl + "?menu=search" + param;
-            // location.assign(menuUrl);
+            location.assign(menuUrl2);
 
         }
 
@@ -215,9 +215,9 @@ if ($sFlag != '0') {
             $("#rmxLoader").hide();
         }
 
-        var status = "<?php echo $status; ?>";
-        alert(status);
-        $("#rmxLoader").hide();
+        // var status = "<?php echo $status; ?>";
+        // alert(status);
+        // $("#rmxLoader").hide();
 
     });
 </script>
