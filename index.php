@@ -10,7 +10,7 @@ include("menu/function/globalMenuFunc.php");
 
 $getDataFromUrl = getDataFromUrl();
 $getData = getDataFromDatabase($getDataFromUrl);
-$sFlag = $getData->sFlag;
+$soldToCode = $getData->SoldToCode;
 
 ?>
 
@@ -67,16 +67,19 @@ $sFlag = $getData->sFlag;
 
                                 if (toMenu == "register") {
                                     menuUrl = "menu/registerMenu.php" + paramS;
-                                } else if (toMenu == "ticket") {
-                                    menuUrl = "menu/ticketMenu.php" + paramS;
-                                } else if (toMenu == "profile") {
-                                    menuUrl = "menu/profileMenu.php" + paramS;
-                                } else if (toMenu == "search") {
-                                    menuUrl = "menu/searchMenu.php" + paramS;
                                 }
-                                const sFlag = "<? echo $sFlag; ?>";
-                                if (sFlag != '4') {
+
+                                const soldToCode = "<? echo $soldToCode; ?>";
+                                if (soldToCode == '') {
                                     menuUrl = "menu/registerMenu.php?status=init";
+                                } else {
+                                    if (toMenu == "ticket") {
+                                        menuUrl = "menu/ticketMenu.php" + paramS;
+                                    } else if (toMenu == "profile") {
+                                        menuUrl = "menu/profileMenu.php" + paramS;
+                                    } else if (toMenu == "search") {
+                                        menuUrl = "menu/searchMenu.php" + paramS;
+                                    }
                                 }
 
                                 if (toStatus == 'init' || toStatus == 'check') {
