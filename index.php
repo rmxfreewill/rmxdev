@@ -6,7 +6,7 @@ error_reporting(-1);
 ini_set('display_errors', 'On');
 
 include("define_Global.php");
-include("function/globalMenuFunc.php");
+include("menu/function/globalMenuFunc.php");
 
 $getDataFromUrl = getDataFromUrl();
 $getData = getDataFromDatabase($getDataFromUrl);
