@@ -225,7 +225,12 @@ function replyJsonMessagev2($jsonData, $LineId)
     $textParams = $jsonData["events"][0]["message"]["text"];
     $case = trim(strtolower($textParams));
     if ($case  == 'hi') {
-      $flexMessage = '{}';
+      $flexMessage = '{"message": {
+        "type": "text",
+        "text": "hi"
+    }}';
+
+
     }
   }
   return $flexMessage = json_decode($flexMessage);
