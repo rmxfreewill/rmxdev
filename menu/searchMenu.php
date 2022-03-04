@@ -215,6 +215,8 @@ if ($sFlag != '0') {
             $("#rmxLoader").hide();
         }
 
+        var status = "<?php echo $status; ?>";
+        alert(status);
         $("#rmxLoader").hide();
 
     });
