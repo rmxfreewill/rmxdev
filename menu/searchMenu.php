@@ -124,13 +124,6 @@ if ($status == 'check') {
     // $getData = getDataFromDatabase($getDataFromUrl);
     // $sFlag = $getData->sFlag;
 
-
-    $TableTitle = '';
-    if (isset($_POST['TableTitle']))
-        $TableTitle = $_POST['TableTitle'];
-    if (isset($_GET['TableTitle']))
-        $TableTitle = $_GET['TableTitle'];
-
     echo json_encode($TableTitle);
     echo "<br>";
     echo $status;
