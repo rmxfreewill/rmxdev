@@ -69,6 +69,7 @@ $soldToCode = $getData->SoldToCode;
                                     menuUrl = "menu/registerMenu.php" + paramS;
                                 }
 
+                                var tt = "<?php echo $getData; ?>";
                                 const soldToCode = "<? echo $soldToCode; ?>";
                                 if (soldToCode == '') {
                                     menuUrl = "menu/registerMenu.php?status=init";
@@ -81,7 +82,7 @@ $soldToCode = $getData->SoldToCode;
                                         menuUrl = "menu/searchMenu.php" + paramS;
                                     }
                                 }
-alert(menuUrl);
+                                alert(tt);
                                 if (toStatus == 'init' || toStatus == 'check') {
                                     try {
                                         $("#rmxLiFFLayout").load(menuUrl);
