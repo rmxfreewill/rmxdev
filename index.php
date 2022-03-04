@@ -90,8 +90,13 @@ echo "flag: " . $sFlag;
                                     }
                                 } else if (sFlag == "0") {
                                     menuUrl = "menu/registerMenu.php" + paramS;
+                                    <?php
+                                    if ($sFlag == "0") {
+                                        rmxChangeRichMenu('LOGOUT', $LineId);
+                                    }
+                                    ?>
                                 }
-
+alert(menuUrl);
                                 if (toStatus == 'init' || toStatus == 'check') {
                                     try {
                                         $("#rmxLiFFLayout").load(menuUrl);
