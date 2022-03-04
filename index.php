@@ -14,7 +14,7 @@ $LineId = $getDataFromUrl->LineId;
 $getData = getDataFromDatabase($getDataFromUrl);
 $sFlag = $getData->sFlag;
 
-echo "flag: " . $sFlag;
+// echo "flag: " . $sFlag;
 ?>
 
 <!DOCTYPE HTML>
@@ -96,7 +96,8 @@ echo "flag: " . $sFlag;
                                     }
                                     ?>
                                 }
-alert(menuUrl);
+                                alert(sFlag);
+                                alert(menuUrl);
                                 if (toStatus == 'init' || toStatus == 'check') {
                                     try {
                                         $("#rmxLiFFLayout").load(menuUrl);
