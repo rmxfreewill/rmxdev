@@ -22,9 +22,9 @@ try {
     $shipToNameText = $getData->ShipToName;
     $soldToCodeText = $getData->SoldToCode;
     $shipToCodeText = $getData->ShipToCode;
-
-    if ($soldToCodeText == '') {
-        header(sURL+"?menu=register");
+    echo $shipToCodeText;
+    if ($soldToCodeText == '' ||  is_null($soldToCodeText)) {
+        header(sURL + "?menu=register");
     }
 
     if ($nameText == '') {

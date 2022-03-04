@@ -69,7 +69,7 @@ $soldToCode = $getData->SoldToCode;
                                 }
 
                                 const soldToCode = "<? echo $soldToCode; ?>";
-                                if (soldToCode == '') {
+                                if (soldToCode == '' || soldToCode == null) {
                                     menuUrl = "menu/registerMenu.php?status=init";
                                 } else {
                                     if (toMenu == "ticket") {
