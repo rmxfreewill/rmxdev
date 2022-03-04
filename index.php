@@ -12,7 +12,7 @@ $getDataFromUrl = getDataFromUrl();
 $getData = getDataFromDatabase($getDataFromUrl);
 $soldToCode = $getData->SoldToCode;
 
-echo json_encode($getData);
+echo 'SoldTo: ' . json_encode($getData->SoldToCode);
 ?>
 
 <!DOCTYPE HTML>
@@ -70,7 +70,7 @@ echo json_encode($getData);
                                     menuUrl = "menu/registerMenu.php" + paramS;
                                 }
 
- 
+
                                 const soldToCode = "<? echo $soldToCode; ?>";
                                 if (soldToCode == '') {
                                     menuUrl = "menu/registerMenu.php?status=init";
