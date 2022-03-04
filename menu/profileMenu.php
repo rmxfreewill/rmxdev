@@ -7,7 +7,7 @@ ini_set('display_errors', 'On');
 include($_SERVER['DOCUMENT_ROOT'] . "/define_Global.php");
 include("function/globalMenuFunc.php");
 
-
+$sUrl = sURL;
 
 $getDataFromUrl = getDataFromUrl();
 $LineId = $getDataFromUrl->LineId;
@@ -24,7 +24,8 @@ try {
     $shipToCodeText = $getData->ShipToCode;
     echo 'soldtoCode: ' . $shipToCodeText;
     if ($soldToCodeText == '' ||  $soldToCodeText == null) {
-        header(sURL + "?menu=register");
+        header("location: $sUrl?menu=register");
+        exit(0);
     }
 
     if ($nameText == '') {
