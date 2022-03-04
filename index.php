@@ -14,15 +14,12 @@ include("menu/function/globalMenuFunc.php");
 
 $getDataFromUrl = getDataFromUrl();
 $LineId = $getDataFromUrl->LineId;
-
-
-$CmdCommand = $getDataFromUrl->CmdCommand;
 $getData = getDataFromDatabase($getDataFromUrl);
 
 
 
 
-echo 'CmdCommand: ' . $CmdCommand;
+echo json_encode($getData);
 
 ?>
 
