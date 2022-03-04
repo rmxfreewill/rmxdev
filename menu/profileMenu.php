@@ -23,7 +23,7 @@ try {
     $soldToCodeText = $getData->SoldToCode;
     $shipToCodeText = $getData->ShipToCode;
     echo $shipToCodeText;
-    if ($soldToCodeText == '' ||  is_null($soldToCodeText)) {
+    if ($soldToCodeText == '' ||  $soldToCodeText == null) {
         header(sURL + "?menu=register");
     }
 
