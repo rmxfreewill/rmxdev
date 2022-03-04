@@ -72,8 +72,8 @@ $sFlag = $getData->sFlag;
                                 // if (toMenu == "register") {
                                 //     menuUrl = "menu/registerMenu.php" + paramS;
                                 // }
-                                
-                                alert(toStatus);
+
+                                alert(getParam.status);
                                 if (sFlag == "4") {
                                     if (toMenu == "ticket") {
                                         menuUrl = "menu/ticketMenu.php" + paramS;
