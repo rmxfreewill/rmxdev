@@ -71,7 +71,10 @@ $sFlag = $getData->sFlag;
                                 }
 
                                 if (sFlag == "0") {
-                                    menuUrl = "menu/registerMenu.php?status=init";
+                                    <?php
+                                    rmxChangeRichMenu('LOGOUT', $LineId);
+                                    ?>
+                                    rmxCloseWindow();
                                 } else {
                                     if (toMenu == "ticket") {
                                         menuUrl = "menu/ticketMenu.php" + paramS;
