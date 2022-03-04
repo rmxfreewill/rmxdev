@@ -235,6 +235,8 @@ function replyJsonMessagev2($jsonData, $LineId)
         }
     }
       ';
+    } else if ($case  == 'logout') {
+      rmxChangeRegisterRichMenu($LineId);
     }
   }
   return $flexMessage = json_decode($flexMessage);
