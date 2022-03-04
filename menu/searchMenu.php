@@ -215,8 +215,7 @@ if ($sFlag != '0') {
             $("#rmxLoader").hide();
         }
 
+        $("#rmxLoader").hide();
 
-            $("#rmxLoader").hide();
-        
     });
 </script>
