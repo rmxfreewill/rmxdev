@@ -22,7 +22,6 @@ try {
     $shipToNameText = $getData->ShipToName;
     $soldToCodeText = $getData->SoldToCode;
     $shipToCodeText = $getData->ShipToCode;
-    echo 'soldtoCode: ' . $shipToCodeText;
     if ($soldToCodeText == '' ||  $soldToCodeText == null) {
         header("location: $sUrl?menu=register");
         exit(0);
